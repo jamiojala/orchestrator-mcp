@@ -2,6 +2,11 @@
 
 This repository includes a first-party skill library designed to be useful both inside `orchestrator-mcp` and in other agent ecosystems.
 
+This repo now has two layers:
+
+- curated installable skills checked directly into `skills/`
+- a larger marketplace catalog that can be browsed and exported on demand
+
 ## Why this matters
 
 After reviewing adjacent ecosystems, a clear pattern emerges:
@@ -53,6 +58,15 @@ If your Codex environment supports GitHub-directory skill install, install a sin
 ### Use inside other agent systems
 
 Portable skills include a `SKILL.md` with frontmatter so they can be copied into systems that understand agent-skill style markdown packages.
+
+### Use the repo as a marketplace
+
+```bash
+orchestrator-mcp skills list
+orchestrator-mcp skills show public-repo-sanitizer
+orchestrator-mcp skills export public-repo-sanitizer --to ./exported-skills
+orchestrator-mcp skills export-category --category frontend --to ./exported-skills
+```
 
 ## Design principles
 

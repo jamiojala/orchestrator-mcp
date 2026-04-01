@@ -20,6 +20,7 @@ from .analysis import (
 from .config import ProjectConfig, load_project_config, provider_env_status
 from .content import CODEX_DUAL_MODE_FRAMEWORK, SAFETY_POLICY_TEXT
 from .dispatch import dispatch_with_routing, format_dispatch_output
+from .marketplace import get_marketplace_skill, marketplace_summary
 from .models import (
     AskInput,
     ChatInput,
@@ -91,6 +92,20 @@ def build_server(config_path: Path | None = None) -> FastMCP:
         payload = {
             "configured_providers": provider_env_status(),
             "skills": app.skill_registry.summary(),
+        }
+        return json.dumps(payload, indent=2)
+
+    @mcp.resource(
+        "llm://registry/marketplace-skills",
+        name="skill_marketplace",
+        title="Skill Marketplace",
+        description="Summary of the built-in 100-skill marketplace catalog.",
+        mime_type="application/json",
+    )
+    def skill_marketplace_resource() -> str:
+        payload = {
+            "marketplace_count": len(marketplace_summary()),
+            "skills": marketplace_summary(),
         }
         return json.dumps(payload, indent=2)
 
@@ -457,6 +472,35 @@ def build_server(config_path: Path | None = None) -> FastMCP:
             },
         ]
         return json.dumps(providers, indent=2)
+
+    @mcp.tool(
+        name="skill_marketplace_list",
+        annotations={
+            "title": "List Marketplace Skills",
+            "readOnlyHint": True,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": False,
+        },
+    )
+    async def skill_marketplace_list() -> str:
+        return json.dumps({"marketplace_count": len(marketplace_summary()), "skills": marketplace_summary()}, indent=2)
+
+    @mcp.tool(
+        name="skill_marketplace_show",
+        annotations={
+            "title": "Show One Marketplace Skill",
+            "readOnlyHint": True,
+            "destructiveHint": False,
+            "idempotentHint": True,
+            "openWorldHint": False,
+        },
+    )
+    async def skill_marketplace_show(skill_id: str) -> str:
+        skill = get_marketplace_skill(skill_id)
+        if skill is None:
+            return json.dumps({"error": f"Marketplace skill not found: {skill_id}"}, indent=2)
+        return json.dumps(skill.marketplace_manifest(), indent=2)
 
     return mcp
 

@@ -8,6 +8,7 @@ If your workflow already spans Ollama, Gemini, NVIDIA-hosted models, or multiple
 
 - Repository description: `Local-first MCP server for multi-LLM orchestration across Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA models.`
 - Suggested topics: `mcp`, `model-context-protocol`, `llm`, `multi-agent`, `ollama`, `claude-code`, `codex`, `kimi-code`, `developer-tools`, `ai-tooling`
+- Suggested GitHub Pages URL: `https://jamiojala.github.io/orchestrator-mcp/`
 
 ## Why this exists
 
@@ -30,6 +31,7 @@ Most coding agents are excellent inside one model silo. Real developer setups ar
 - Streamlit dashboard for recent runs, failures, cache hits, and estimated project spend
 - YAML skill registry for reusable routing rules and validation logic
 - Safe git-analysis helpers for commit messages, PR descriptions, and review summaries without mutating the repo
+- A built-in skill marketplace with browse and export commands for teams that want the skills without the MCP runtime
 
 ## Cheapest default recommendation
 
@@ -181,6 +183,23 @@ Skills live in `skills/<slug>/skill.yaml` and can define:
 
 The repo also ships a first-party downloadable skill library. Newer skills include portable `SKILL.md` packs so they can be copied into other agent ecosystems, not just this MCP.
 
+## Skill marketplace
+
+If you only want the skills library, the repo works as a portable marketplace:
+
+```bash
+orchestrator-mcp skills list
+orchestrator-mcp skills show liquid-glass-enforcer
+orchestrator-mcp skills export liquid-glass-enforcer --to ./exported-skills
+orchestrator-mcp skills export-category --category security --to ./exported-skills
+```
+
+The marketplace layer includes:
+
+- a 100-skill core catalog across 10 domains
+- curated first-party packs already stored in `skills/`
+- standalone exports with `SKILL.md`, `skill.yaml`, and `marketplace.yaml`
+
 ## Repository contents
 
 - `src/orchestrator_mcp/`: core package
@@ -205,6 +224,8 @@ See [`docs/index.md`](docs/index.md) or serve the site locally:
 ```bash
 mkdocs serve
 ```
+
+GitHub Pages deployment is configured in `.github/workflows/deploy-pages.yml`.
 
 ## License
 

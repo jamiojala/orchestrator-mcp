@@ -22,6 +22,7 @@ def test_server_registers_expected_tools(tmp_path: Path) -> None:
     tools = _extract_tool_map(server)
     assert "estimate_complexity" in tools
     assert "llm_list_providers" in tools
+    assert "skill_marketplace_list" in tools
 
 
 def test_estimate_complexity_tool_is_callable(tmp_path: Path) -> None:

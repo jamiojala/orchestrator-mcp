@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: pip install -e ".[dev]"
+
+      - name: Compile Python sources
+        run: python -m py_compile llm_delegator_mcp.py scripts/check_public_repo.py src/orchestrator_mcp/*.py tests/*.py
+
+      - name: Run repo hygiene scan
+        run: python scripts/check_public_repo.py

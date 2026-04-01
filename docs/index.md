@@ -16,5 +16,6 @@ It is built for developers who:
 - safe delegation helpers for Codex-style orchestration
 - local observability for recent runs and failures
 - public-release hygiene scanning
+- a GitHub Pages-friendly skills marketplace with exportable standalone packs
 
-Start with [Quickstart](quickstart.md) or jump straight to [One-Paste Installs](one-paste-installs.md).
+Start with [Quickstart](quickstart.md), browse the [Marketplace](marketplace.md), or jump straight to [One-Paste Installs](one-paste-installs.md).
