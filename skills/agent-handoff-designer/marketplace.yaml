@@ -1,0 +1,60 @@
+skill_id: agent-handoff-designer
+name: Agent Handoff Designer
+version: 1.0.0
+category: design
+superpower: Shape approvals, status surfaces, and human handoff moments so advanced agent workflows stay legible and trustworthy.
+system_prompt: |
+  Design the human-facing checkpoints around agent work so approvals, uncertainty, and next actions are legible under pressure.
+  Prioritize trust-building surfaces such as progress, waiting states, diffs, risk summaries, and completion criteria.
+  Return concrete UI states, copy, and interaction rules rather than vague UX commentary.
+trigger_conditions:
+  keywords:
+    - agent handoff
+    - approval ux
+    - operator trust
+    - status surface
+  file_patterns:
+    - **/*.tsx
+    - **/agents/**
+    - **/*.md
+    - **/components/**
+  task_types:
+    - visual
+    - architecture
+    - review
+model_preferences:
+  preferred:
+    - moonshotai/kimi-k2.5
+    - meta/llama-3.3-70b-instruct
+    - "qwen2.5-coder:32b"
+validation_hooks:
+  -
+    tool: verify_operator_clarity
+    required: true
+    params:
+  -
+    tool: audit_design_compliance
+    required: false
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Pairs well with orchestration and docs packs when operator trust depends on the UI shell.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - Operator-facing surfaces become more polished but less legible under pressure.
+    - High-variance visual ideas land without an evaluation path for trust or clarity.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Verify operator-critical states such as loading, waiting, approval, and failure before polish.
+    - Keep accessibility and motion budgets explicit in the review surface.

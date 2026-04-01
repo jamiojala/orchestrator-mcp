@@ -1,0 +1,36 @@
+name: Hallucination Regression Hunter
+slug: hallucination-regression-hunter
+description: Build eval cases that expose fabricated citations, brittle reasoning chains, and ungrounded tool usage before they hit real workflows.
+public: true
+category: testing
+tags:
+  - evals
+  - grounding
+  - regression
+  - reliability
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - moonshotai/kimi-k2.5
+  - "deepseek-r1:32b"
+prompt_template: |
+  Design high-signal regression cases that catch fabricated claims, ungrounded citations, and tool misuse in agent workflows.
+  Bias toward realistic prompts, operator-visible failures, and the smallest repeatable eval loop that can guard future releases.
+  Return the eval matrix, rubric, and likely false-positive traps.
+validation:
+  - verify_eval_coverage
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - hallucination
+    - grounding
+    - eval case
+    - agent reliability
+  file_globs:
+    - **/evals/**
+    - **/tests/**
+    - **/*.json
+    - **/*.md
+  task_types:
+    - review
+    - reasoning
+    - architecture

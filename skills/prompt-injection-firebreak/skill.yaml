@@ -1,0 +1,36 @@
+name: Prompt Injection Firebreak
+slug: prompt-injection-firebreak
+description: Design hard prompt boundaries, tool gating, and context sanitization so indirect prompt injection has fewer places to land.
+public: true
+category: security
+tags:
+  - prompt-injection
+  - tool-gating
+  - sanitization
+  - agents
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - moonshotai/kimi-k2.5
+  - "deepseek-r1:32b"
+prompt_template: |
+  Audit the workflow for direct and indirect prompt-injection exposure, especially through retrieved content, tool responses, and long conversation state.
+  Return concrete firebreaks for sanitization, permissioning, human approval, and tool result handling.
+  Bias toward layered mitigations with clear residual-risk notes.
+validation:
+  - verify_prompt_boundary
+  - git_delegate_code_review
+triggers:
+  keywords:
+    - prompt injection
+    - context sanitization
+    - tool gating
+    - agent security
+  file_globs:
+    - **/prompts/**
+    - **/tools/**
+    - **/*.md
+    - **/*.yaml
+  task_types:
+    - review
+    - architecture
+    - reasoning

@@ -1,0 +1,36 @@
+name: Context Window Cartographer
+slug: context-window-cartographer
+description: Reshape sprawling repositories and briefs into stable context lanes, memory checkpoints, and retrieval boundaries for long-horizon agent work.
+public: true
+category: orchestration
+tags:
+  - context
+  - memory
+  - orchestration
+  - retrieval
+preferred_models:
+  - moonshotai/kimi-k2.5
+  - deepseek-ai/deepseek-v3.2
+  - "deepseek-r1:32b"
+prompt_template: |
+  Map the available repo and task context into stable slices that a coding agent can carry across long-horizon work.
+  Preserve the highest-value details, identify what can be summarized, and define when new checkpoints or summaries must be created.
+  Return an explicit context budget, retrieval plan, and handoff sequence for future agent turns.
+validation:
+  - verify_context_coverage
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - context window
+    - prompt budget
+    - memory checkpoint
+    - retrieval boundary
+  file_globs:
+    - **/*.md
+    - **/*.ts
+    - **/*.py
+    - **/docs/**
+  task_types:
+    - architecture
+    - reasoning
+    - review

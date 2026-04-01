@@ -1,0 +1,36 @@
+name: Tool Contract Normalizer
+slug: tool-contract-normalizer
+description: Normalize tool input and output schemas so multi-agent tool calling becomes more reliable, typed, and retry-safe.
+public: true
+category: api
+tags:
+  - tooling
+  - schema
+  - contracts
+  - agents
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - "qwen3-coder:480b-cloud"
+  - "deepseek-r1:32b"
+prompt_template: |
+  Audit the current tool surface for inconsistent schemas, weak typing, ambiguous field names, and brittle error contracts.
+  Return a normalized contract strategy that reduces agent tool-call failures and makes retries or fallbacks predictable.
+  Include migration notes for existing tools and consumers.
+validation:
+  - verify_schema_consistency
+  - generate_diff
+triggers:
+  keywords:
+    - tool schema
+    - function calling
+    - tool contract
+    - typed payload
+  file_globs:
+    - **/tools/**
+    - **/api/**
+    - **/*.json
+    - **/*.yaml
+  task_types:
+    - architecture
+    - review
+    - reasoning

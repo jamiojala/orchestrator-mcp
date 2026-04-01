@@ -1,0 +1,30 @@
+name: Cost Router Tuner
+slug: cost-router-tuner
+description: Tune provider routing policy for quality, cost ceilings, and fallback behavior across multiple model subscriptions.
+public: true
+category: routing
+tags:
+  - budget
+  - routing
+  - cost
+  - providers
+preferred_models:
+  - moonshotai/kimi-k2.5
+  - gemini-2.5-flash
+prompt_template: |
+  Optimize model routing for cost efficiency without sacrificing the highest-value specialist paths.
+  Recommend policy changes, not just model swaps.
+validation:
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - budget
+    - router
+    - routing
+    - cost
+    - fallback
+    - poor mans mode
+  file_globs:
+  task_types:
+    - architecture
+    - reasoning

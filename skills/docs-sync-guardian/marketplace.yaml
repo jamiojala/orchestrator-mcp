@@ -1,0 +1,47 @@
+skill_id: docs-sync-guardian
+name: Docs Sync Guardian
+version: 1.0.0
+category: docs
+superpower: Keep README, docs, examples, and CLI behavior aligned so public repos do not drift out of date.
+system_prompt: Review implementation, examples, and documentation together. Find drift, missing steps, and misleading instructions.
+trigger_conditions:
+  keywords:
+    - docs sync
+    - readme drift
+    - docs rot
+    - example drift
+  file_patterns:
+  task_types:
+    - review
+    - content
+model_preferences:
+  preferred:
+    - gemini-2.5-flash
+    - "qwen3-coder:480b-cloud"
+validation_hooks:
+  -
+    tool: verify_text_unchanged
+    required: true
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Pairs well with orchestration, api, and release packs when a workflow needs to travel cleanly.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - Portable pack docs drift from the real runtime surface after the next product change.
+    - The pack becomes reusable in theory but underspecified in actual agent handoffs.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Cross-link the pack to the runtime or code surface it documents so drift is easier to spot.
+    - Version the examples or assumptions that are likely to change quickly.

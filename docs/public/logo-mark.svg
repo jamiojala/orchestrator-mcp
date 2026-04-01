@@ -1,0 +1,16 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orchestrator-gradient" x1="26" y1="22" x2="101" y2="103" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EF8F3A"/>
+      <stop offset="1" stop-color="#2C8BFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="#111317"/>
+  <path d="M35 38C46 38 55 47 63 60" stroke="url(#orchestrator-gradient)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M93 38C82 38 73 47 65 60" stroke="url(#orchestrator-gradient)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M79 89C70 82 66 74 64 64" stroke="url(#orchestrator-gradient)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="35" cy="38" r="8" fill="#111317" stroke="#F3F4F6" stroke-width="4"/>
+  <circle cx="93" cy="38" r="8" fill="#111317" stroke="#F3F4F6" stroke-width="4"/>
+  <circle cx="79" cy="89" r="8" fill="#111317" stroke="#F3F4F6" stroke-width="4"/>
+  <circle cx="64" cy="64" r="12" fill="url(#orchestrator-gradient)"/>
+</svg>

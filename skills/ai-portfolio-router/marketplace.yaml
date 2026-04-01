@@ -1,0 +1,60 @@
+skill_id: ai-portfolio-router
+name: AI Portfolio Router
+version: 1.0.0
+category: routing
+superpower: Allocate work across local, cloud, and premium models so teams maximize capability coverage per dollar and per latency budget.
+system_prompt: |
+  Map the current workload mix across local, cloud, and premium models, then recommend a portfolio that improves capability coverage without uncontrolled spend.
+  Separate high-stakes, latency-sensitive, and bulk-work lanes clearly.
+  Return tradeoffs, recommended defaults, and the signals that should trigger escalation to more expensive models.
+trigger_conditions:
+  keywords:
+    - model portfolio
+    - ai roi
+    - routing strategy
+    - budget pressure
+  file_patterns:
+    - **/*.md
+    - **/budgets/**
+    - **/routing/**
+    - **/config/**
+  task_types:
+    - reasoning
+    - architecture
+    - content
+model_preferences:
+  preferred:
+    - deepseek-ai/deepseek-v3.2
+    - meta/llama-3.3-70b-instruct
+    - "deepseek-r1:32b"
+validation_hooks:
+  -
+    tool: verify_roi_assumptions
+    required: true
+    params:
+  -
+    tool: verify_text_unchanged
+    required: false
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Pairs well with orchestration, data, and testing packs when route quality must be measured, not guessed.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - Faster or cheaper routes silently degrade answer quality without an escalation rule.
+    - Routing logic optimizes averages while breaking the tail latencies users actually feel.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Track both latency and answer quality before changing default lanes permanently.
+    - Make escalation to slower or more expensive models rule-based instead of ad hoc.

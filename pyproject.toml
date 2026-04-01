@@ -43,9 +43,6 @@ dependencies = [
 dashboard = [
   "streamlit>=1.43",
 ]
-docs = [
-  "mkdocs-material>=9.6",
-]
 dev = [
   "pytest>=8.0",
   "ruff>=0.11",

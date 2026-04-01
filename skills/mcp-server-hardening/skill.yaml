@@ -1,0 +1,30 @@
+name: MCP Server Hardening
+slug: mcp-server-hardening
+description: Review an MCP server for prompt-exfiltration, shell abuse, overbroad tool scope, and unsafe logging.
+public: true
+category: security
+tags:
+  - mcp
+  - security
+  - hardening
+  - privacy
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - moonshotai/kimi-k2.5
+prompt_template: |
+  Audit the MCP server design for overbroad capabilities, data exposure, and unsafe execution paths.
+  Prefer specific mitigations over vague security advice.
+validation:
+  - git_delegate_code_review
+triggers:
+  keywords:
+    - mcp hardening
+    - prompt exfiltration
+    - tool scope
+    - unsafe logging
+    - server safety
+  file_globs:
+  task_types:
+    - review
+    - reasoning
+    - architecture

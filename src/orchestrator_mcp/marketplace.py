@@ -76,6 +76,280 @@ CATEGORY_CONSTRAINTS = {
     ],
 }
 
+COMMON_CONTEXT_HINTS = [
+    "Relevant files, modules, docs, or data slices that define the current surface area.",
+    "Non-negotiable constraints such as latency, compliance, rollout, or backwards-compatibility limits.",
+    "What success looks like in user, operator, or system terms.",
+]
+
+CATEGORY_CONTEXT_EXTRAS = {
+    "architecture": "Migration boundaries, ownership lines, and failure domains across the system.",
+    "frontend": "Interaction states, accessibility expectations, and device or viewport constraints.",
+    "backend": "Contracts, persistence behavior, and operational dependencies such as queues or third-party APIs.",
+    "qa": "Current regressions, flaky surfaces, and what confidence signals already exist or are missing.",
+    "devops": "Environment topology, deployment path, secrets handling, and rollback expectations.",
+    "security": "Assets, trust boundaries, attacker assumptions, and unacceptable exposure paths.",
+    "data": "Data lineage, freshness requirements, downstream consumers, and privacy boundaries.",
+    "product": "Target user moment, behavioral metric, and friction that currently blocks value.",
+    "content": "Source material, audience sophistication, and implementation details the docs must stay faithful to.",
+    "business": "Decision horizon, uncertainty level, and assumptions that materially change the recommendation.",
+}
+
+COMMON_DELIVERABLES = [
+    "Capability summary and why this skill fits the request.",
+    "Concrete implementation or decision slices with explicit targets.",
+    "Validation, rollout, and rollback guidance sized to the risk.",
+]
+
+CATEGORY_DELIVERABLE_EXTRAS = {
+    "architecture": [
+        "Boundary map covering interfaces, ownership, and migration choreography.",
+        "Containment plan for risky moves or partial rollout states.",
+    ],
+    "frontend": [
+        "UI or interaction recommendations tied to concrete components, states, and accessibility outcomes.",
+        "Performance notes for motion, rendering, and asset cost.",
+    ],
+    "backend": [
+        "Contract, persistence, and failure-mode changes called out explicitly.",
+        "Observability expectations for success and failure paths.",
+    ],
+    "qa": [
+        "Regression matrix with must-test, edge, and deferred paths.",
+        "A deterministic reproduction or instrumentation path where possible.",
+    ],
+    "devops": [
+        "Operator-ready rollout sequence with promotion and rollback checkpoints.",
+        "Environment-specific caveats, secrets, and drift risks.",
+    ],
+    "security": [
+        "Threats or findings ordered by severity and exploitability.",
+        "Residual risk notes after mitigations are applied.",
+    ],
+    "data": [
+        "Measurement or modeling plan that preserves correctness and explainability.",
+        "Freshness, privacy, and downstream-consumer notes.",
+    ],
+    "product": [
+        "User-journey changes tied to a measurable product outcome.",
+        "States, copy, or interaction guidance for critical moments.",
+    ],
+    "content": [
+        "Structure that preserves technical fidelity while improving comprehension.",
+        "Example, version, or setup gaps that must be fixed before publication.",
+    ],
+    "business": [
+        "Decision memo that separates facts, assumptions, and recommended action.",
+        "Scenario tradeoffs with downside and uncertainty called out directly.",
+    ],
+}
+
+COMMON_ANTI_GOALS = [
+    "Speculation that is not grounded in the provided code, product, or operating context.",
+    "Advice that ignores safety, migration, or validation costs.",
+    "Boilerplate output that does not narrow the next concrete step.",
+]
+
+CATEGORY_ANTI_GOAL_EXTRAS = {
+    "architecture": [
+        "Big-bang rewrites without containment or rollback.",
+        "Abstractions added only for aesthetics instead of system leverage.",
+    ],
+    "frontend": [
+        "Visual polish that breaks accessibility or performance.",
+        "Generic card-grid UI that hides the core workflow.",
+    ],
+    "backend": [
+        "Breaking interface changes without migration guidance.",
+        "Happy-path-only designs that ignore retries, idempotency, and degradation.",
+    ],
+    "qa": [
+        "Coverage theatre that does not improve confidence.",
+        "Non-deterministic tests without isolation strategy.",
+    ],
+    "devops": [
+        "Unsafe rollout cleverness that increases operator burden.",
+        "Environment-specific assumptions presented as universal defaults.",
+    ],
+    "security": [
+        "Exploit instructions, unsafe shortcuts, or secrecy by omission.",
+        "Risk language without concrete mitigations or residual risk framing.",
+    ],
+    "data": [
+        "Metrics that cannot be traced back to source truth.",
+        "Analytics designs that trade away privacy or explainability casually.",
+    ],
+    "product": [
+        "Feature advice untethered from user clarity or measurable value.",
+        "Growth patterns that erode trust or accessibility.",
+    ],
+    "content": [
+        "Polished prose that drifts from implementation reality.",
+        "Examples that look good but do not actually run or match the product.",
+    ],
+    "business": [
+        "False certainty in legal, financial, or strategic gray areas.",
+        "Recommendations that hide assumptions or downside exposure.",
+    ],
+}
+
+COMMON_WORKFLOW_STEPS = [
+    "Restate the goal, boundaries, and success metric in operational terms.",
+    "Map the files, surfaces, or decisions most likely to matter first.",
+    "Prioritize the highest-risk or highest-leverage slices before polish.",
+    "Produce a bounded plan with explicit validation hooks.",
+    "Return rollout, fallback, and open-question notes for handoff.",
+]
+
+CATEGORY_WORKFLOW_FOCUS = {
+    "architecture": "Trace dependencies and migration seams before proposing new boundaries.",
+    "frontend": "Audit user-visible states, responsive behavior, and accessibility before styling or motion changes.",
+    "backend": "Model contract, data, and error-flow consequences before recommending implementation shifts.",
+    "qa": "Start from failure reproduction and confidence gaps before expanding test surface area.",
+    "devops": "Sequence rollout, rollback, and environment drift concerns before optimizing efficiency.",
+    "security": "Model trust boundaries, likely abuse paths, and blast radius before mitigation ordering.",
+    "data": "Verify lineage, freshness, and decision value before proposing new metrics or models.",
+    "product": "Anchor recommendations in the target user moment and measurable outcome before feature expansion.",
+    "content": "Cross-check source truth and version fidelity before restructuring the material.",
+    "business": "Separate evidence from assumptions before landing on a recommendation.",
+}
+
+COMMON_FAILURE_MODES = [
+    "The recommendation is technically correct but not grounded in the actual files, operators, or rollout constraints.",
+    "Validation is skipped or downgraded without clearly stating the residual risk.",
+    "The work lands as a broad rewrite instead of a bounded, reversible slice.",
+]
+
+CATEGORY_FAILURE_MODE_EXTRAS = {
+    "architecture": [
+        "Migration seams are proposed without ownership, rollback, or coexistence rules.",
+        "New boundaries increase coupling or runtime coordination cost.",
+    ],
+    "frontend": [
+        "Visual or motion upgrades reduce accessibility, responsiveness, or input clarity.",
+        "Hydration, bundle, or rendering cost increases without an explicit budget check.",
+    ],
+    "backend": [
+        "Interface changes break existing consumers or weaken idempotency and retry behavior.",
+        "Operational degradation paths are missing for dependency or datastore failure.",
+    ],
+    "qa": [
+        "The suite grows while confidence stays flat because the real failure mode is still untested.",
+        "Flaky signals are normalized instead of isolated and explained.",
+    ],
+    "devops": [
+        "Operator complexity rises because rollout, rollback, or secrets handling stays implicit.",
+        "Environment-specific assumptions leak into reusable infrastructure defaults.",
+    ],
+    "security": [
+        "Mitigations look strong on paper but leave an easy bypass in adjacent systems or tools.",
+        "Sensitive data, exploit detail, or unsafe shortcuts slip into the output surface.",
+    ],
+    "data": [
+        "Improved metrics or models become harder to trace back to source truth.",
+        "Freshness, privacy, or downstream consumer assumptions remain implicit.",
+    ],
+    "product": [
+        "UX recommendations increase novelty without improving task completion or clarity.",
+        "Instrumentation is missing, so the change cannot be evaluated after release.",
+    ],
+    "content": [
+        "The content reads well but drifts from the actual implementation or supported setup.",
+        "Examples are persuasive but not runnable or version-accurate.",
+    ],
+    "business": [
+        "Recommendations hide assumptions, uncertainty, or downside exposure behind polished wording.",
+        "Advice crosses into legal or financial certainty without the right caveats.",
+    ],
+}
+
+COMMON_OPERATIONAL_NOTES = [
+    "Call out the smallest safe rollout slice before proposing broader adoption.",
+    "Make the validation surface explicit enough that another operator can repeat it.",
+    "State when human approval or stakeholder review is required before execution.",
+]
+
+CATEGORY_OPERATIONAL_NOTES = {
+    "architecture": [
+        "Name the migration checkpoint where old and new paths can coexist safely.",
+        "Keep observability in place long enough to compare pre- and post-change behavior.",
+    ],
+    "frontend": [
+        "Verify critical flows on the devices and motion preferences that matter most.",
+        "Track bundle, hydration, and interaction regressions alongside visual polish.",
+    ],
+    "backend": [
+        "Monitor latency, error-rate, and retry behavior during rollout, not just correctness.",
+        "Preserve backward-compatible contracts until downstream migration is confirmed.",
+    ],
+    "qa": [
+        "Keep the reproduction path close to the failing behavior so future regressions are diagnosable.",
+        "Prefer test fixtures and seed data that are cheap to regenerate in CI.",
+    ],
+    "devops": [
+        "Tie rollouts to explicit health thresholds, rollback triggers, and environment boundaries.",
+        "Document the operator path for secrets, permissions, and drift checks.",
+    ],
+    "security": [
+        "Log what was checked, what remains unverified, and which mitigations depend on human enforcement.",
+        "Prefer controls that fail closed or degrade safely when confidence is low.",
+    ],
+    "data": [
+        "Record lineage, freshness expectations, and privacy constraints with the deliverable.",
+        "Separate measurement changes from decision changes so regressions are easier to localize.",
+    ],
+    "product": [
+        "Define the leading indicator that should move if the recommendation is correct.",
+        "Keep copy, states, and instrumentation aligned during rollout.",
+    ],
+    "content": [
+        "Version examples and setup notes so maintainers know when the pack is stale.",
+        "Cross-link the authoritative implementation or config surface where possible.",
+    ],
+    "business": [
+        "Track assumptions that should be revisited as costs, market conditions, or product direction change.",
+        "Separate operator action items from executive-level summary language.",
+    ],
+}
+
+COMMON_COMPOSITION_NOTES = [
+    "Use this pack as the lead skill only when it is closest to the actual failure domain or decision surface.",
+    "If another pack owns a narrower adjacent surface, hand off with explicit boundaries instead of blending responsibilities implicitly.",
+]
+
+CATEGORY_COMPOSITION_NOTES = {
+    "architecture": [
+        "Often composes with backend, devops, and security packs once the boundary map is clear.",
+    ],
+    "frontend": [
+        "Often composes with product, qa, and accessibility-heavy UX work after the UI target is fixed.",
+    ],
+    "backend": [
+        "Often composes with architecture, security, and observability work after contracts are clarified.",
+    ],
+    "qa": [
+        "Often composes with frontend, backend, and security packs to turn findings into durable regressions.",
+    ],
+    "devops": [
+        "Often composes with architecture, security, and backend packs for rollout-safe implementation.",
+    ],
+    "security": [
+        "Often composes with backend, devops, and architecture packs once threats are prioritized.",
+    ],
+    "data": [
+        "Often composes with product, backend, and security packs where measurement meets privacy and operations.",
+    ],
+    "product": [
+        "Often composes with frontend, content, and data packs once the critical user moment is agreed.",
+    ],
+    "content": [
+        "Often composes with product, backend, and business packs to keep docs accurate and decision-useful.",
+    ],
+    "business": [
+        "Often composes with content, data, and architecture packs to tie narrative back to operating reality.",
+    ],
+}
+
 
 @dataclass(frozen=True, slots=True)
 class MarketplaceSkill:
@@ -95,10 +369,65 @@ class MarketplaceSkill:
     custom_constraints: tuple[str, ...] = field(default_factory=tuple)
     version: str = "1.0.0"
 
+    def required_context(self) -> list[str]:
+        return [*COMMON_CONTEXT_HINTS, CATEGORY_CONTEXT_EXTRAS[self.category]]
+
+    def deliverables(self) -> list[str]:
+        validation_phrase = ", ".join(f"`{tool}`" for tool in self.validation_tools) if self.validation_tools else "the stated validation hooks"
+        return [
+            *COMMON_DELIVERABLES,
+            *CATEGORY_DELIVERABLE_EXTRAS[self.category],
+            f"Validation plan covering {validation_phrase}.",
+        ]
+
+    def avoid_when(self) -> list[str]:
+        return [*COMMON_ANTI_GOALS, *CATEGORY_ANTI_GOAL_EXTRAS[self.category]]
+
+    def workflow_steps(self) -> list[str]:
+        return [
+            COMMON_WORKFLOW_STEPS[0],
+            COMMON_WORKFLOW_STEPS[1],
+            CATEGORY_WORKFLOW_FOCUS[self.category],
+            COMMON_WORKFLOW_STEPS[3],
+            COMMON_WORKFLOW_STEPS[4],
+        ]
+
+    def failure_modes(self) -> list[str]:
+        return [*COMMON_FAILURE_MODES, *CATEGORY_FAILURE_MODE_EXTRAS[self.category]]
+
+    def operational_notes(self) -> list[str]:
+        return [*COMMON_OPERATIONAL_NOTES, *CATEGORY_OPERATIONAL_NOTES[self.category]]
+
+    def composition_notes(self) -> list[str]:
+        return [*COMMON_COMPOSITION_NOTES, *CATEGORY_COMPOSITION_NOTES[self.category]]
+
+    def frontmatter_manifest(self) -> dict[str, Any]:
+        payload: dict[str, Any] = {
+            "name": self.name,
+            "description": self.superpower,
+            "public": True,
+            "category": self.category,
+            "tags": list(self.keywords[:4]),
+            "preferred_models": [self.primary_model, self.fallback_model, self.local_only_model],
+            "validation": list(self.validation_tools),
+            "keywords": list(self.keywords),
+            "file_globs": list(self.file_patterns),
+            "task_types": _task_types_for_category(self.category),
+            "complexity_threshold": self.complexity_threshold,
+            "prompt_template": self.system_prompt(),
+        }
+        if self.notes:
+            payload["notes"] = list(self.notes)
+        return payload
+
     def system_prompt(self) -> str:
         role = CATEGORY_ROLES[self.category]
         constraint_lines = CATEGORY_CONSTRAINTS[self.category] + list(self.custom_constraints)
         rendered_constraints = "\n".join(f"- {item}" for item in constraint_lines)
+        rendered_context = "\n".join(f"- {item}" for item in self.required_context())
+        rendered_avoid = "\n".join(f"- {item}" for item in self.avoid_when())
+        rendered_deliverables = "\n".join(f"- {item}" for item in self.deliverables())
+        rendered_workflow = "\n".join(f"{index}. {item}" for index, item in enumerate(self.workflow_steps(), start=1))
         rendered_validation = "\n".join(f"- Ensure `{tool}` passes or explain why it cannot run" for tool in self.validation_tools)
         return "\n".join(
             [
@@ -108,16 +437,23 @@ class MarketplaceSkill:
                 f"Use the supplied code, architecture, or product context to {self.superpower.lower()}",
                 "Produce a bounded implementation plan or code-ready blueprint that another engineer or coding agent can execute safely.",
                 "",
+                "## Gather First",
+                rendered_context,
+                "",
                 "## Constraints",
                 rendered_constraints,
                 "- Return exact file or module targets when you recommend code changes.",
                 "- Include rollback or containment guidance for risky changes.",
                 "",
+                "## Avoid",
+                rendered_avoid,
+                "",
+                "## Workflow",
+                rendered_workflow,
+                "",
                 "## Output Format",
-                "- Capability summary",
-                "- Trigger fit and assumptions",
-                "- Implementation slices with file targets",
-                "- Validation and rollout plan",
+                rendered_deliverables,
+                "- Include the most likely failure modes, operator notes, and composition boundaries with adjacent systems or skills.",
                 "",
                 "## Validation Checklist",
                 rendered_validation,
@@ -152,6 +488,10 @@ class MarketplaceSkill:
                 "pricing_tier": "free",
                 "language_support": CATEGORY_LANGUAGES[self.category],
                 "featured": self.featured,
+                "dependencies": [],
+                "composition_notes": self.composition_notes(),
+                "failure_modes": self.failure_modes(),
+                "operational_notes": self.operational_notes(),
             },
         }
 
@@ -174,46 +514,49 @@ class MarketplaceSkill:
         }
 
     def portable_markdown(self) -> str:
-        frontmatter = [
-            "---",
-            f"name: {self.name}",
-            f"description: {self.superpower}",
-            "public: true",
-            f"category: {self.category}",
-            f"tags: [{', '.join(self.keywords[:4])}]",
-            "preferred_models:",
-            f"  - {self.primary_model}",
-            f"  - {self.fallback_model}",
-            f"  - {self.local_only_model}",
-            "validation:",
-        ]
-        frontmatter.extend(f"  - {tool}" for tool in self.validation_tools)
-        frontmatter.extend(
-            [
-                "keywords:",
-                *[f"  - {item}" for item in self.keywords],
-                "task_types:",
-                *[f"  - {item}" for item in _task_types_for_category(self.category)],
-                "prompt_template: |",
-            ]
-        )
-        frontmatter.extend(f"  {line}" for line in self.system_prompt().splitlines())
-        frontmatter.append("---")
+        frontmatter = ["---", *_render_yaml(self.frontmatter_manifest()), "---"]
+        validation_phrase = ", ".join(f"`{tool}`" for tool in self.validation_tools) if self.validation_tools else "validation hooks"
         body = [
             f"# {self.name}",
             "",
             f"Superpower: {self.superpower}",
             "",
-            "Best used when:",
-            *[f"- keyword or signal: {item}" for item in self.keywords[:4]],
+            "## Use this skill when",
+            *[f"- The request signals `{item}` or an equivalent domain problem." for item in self.keywords[:4]],
+            *[f"- The likely implementation surface includes `{pattern}`." for pattern in self.file_patterns[:3]],
             "",
-            "Recommended validation:",
+            "## Do not use this skill when",
+            *[f"- {item}" for item in self.avoid_when()],
+            "",
+            "## Inputs to gather first",
+            *[f"- {item}" for item in self.required_context()],
+            "",
+            "## Recommended workflow",
+            *[f"{index}. {step}" for index, step in enumerate(self.workflow_steps(), start=1)],
+            "",
+            "## Output contract",
+            *[f"- {item}" for item in self.deliverables()],
+            "",
+            "## Failure modes to watch",
+            *[f"- {item}" for item in self.failure_modes()],
+            "",
+            "## Operational notes",
+            *[f"- {item}" for item in self.operational_notes()],
+            "",
+            "## Dependency and composition notes",
+            *[f"- {item}" for item in self.composition_notes()],
+            "",
+            "## Validation hooks",
             *[f"- `{tool}`" for tool in self.validation_tools],
             "",
-            "Model chain:",
+            "## Model chain",
             f"- primary: `{self.primary_model}`",
             f"- fallback: `{self.fallback_model}`",
             f"- local: `{self.local_only_model}`",
+            "",
+            "## Handoff notes",
+            f"- Treat `{validation_phrase}` as the minimum proof surface before calling the work complete.",
+            "- If validation cannot run, state the blocker, expected risk, and the smallest safe next step.",
         ]
         if self.notes:
             body.extend(["", "Notes:", *[f"- {note}" for note in self.notes]])
@@ -224,22 +567,46 @@ class MarketplaceSkill:
             f"# {self.name}",
             "",
             f"Category: `{self.category}`",
+            f"Version: `{self.version}`",
             "",
             f"Superpower: {self.superpower}",
             "",
-            "Trigger signals:",
+            "## Trigger signals",
             *[f"- `{item}`" for item in self.keywords],
             "",
-            "Suggested file patterns:",
+            "## Best-fit files",
             *[f"- `{item}`" for item in self.file_patterns],
             "",
-            "Validation hooks:",
+            "## Inputs to gather",
+            *[f"- {item}" for item in self.required_context()],
+            "",
+            "## Recommended workflow",
+            *[f"{index}. {step}" for index, step in enumerate(self.workflow_steps(), start=1)],
+            "",
+            "## Deliverables",
+            *[f"- {item}" for item in self.deliverables()],
+            "",
+            "## Failure modes to watch",
+            *[f"- {item}" for item in self.failure_modes()],
+            "",
+            "## Operational notes",
+            *[f"- {item}" for item in self.operational_notes()],
+            "",
+            "## Dependency and composition notes",
+            *[f"- {item}" for item in self.composition_notes()],
+            "",
+            "## Validation hooks",
             *[f"- `{item}`" for item in self.validation_tools],
             "",
-            "Model preferences:",
+            "## Model preferences",
             f"- primary: `{self.primary_model}`",
             f"- fallback: `{self.fallback_model}`",
             f"- local: `{self.local_only_model}`",
+            "",
+            "## Pack contents",
+            "- `SKILL.md` for portable agent-skill usage",
+            "- `skill.yaml` for runtime registry loading",
+            "- `marketplace.yaml` for catalog metadata and richer automation",
         ]
         if self.notes:
             lines.extend(["", "Notes:", *[f"- {note}" for note in self.notes]])

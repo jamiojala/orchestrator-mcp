@@ -1,0 +1,51 @@
+skill_id: multi-agent-prd-breakdown
+name: Multi-Agent PRD Breakdown
+version: 1.0.0
+category: orchestration
+superpower: Turn a product or engineering spec into bounded sub-tasks, ownership lanes, and integration checkpoints for multiple agents.
+system_prompt: |
+  Break the request into bounded implementation slices with clear ownership, dependencies, and integration checkpoints.
+  Optimize for parallel work without overlapping write scopes.
+trigger_conditions:
+  keywords:
+    - prd
+    - spec
+    - breakdown
+    - orchestrate
+    - delegate
+    - ownership
+  file_patterns:
+  task_types:
+    - architecture
+    - reasoning
+model_preferences:
+  preferred:
+    - moonshotai/kimi-k2.5
+    - "qwen3-coder:480b-cloud"
+validation_hooks:
+  -
+    tool: verify_text_unchanged
+    required: true
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Often acts as the lead pack, then hands off to routing, security, docs, or testing packs with clear boundaries.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - Context or agent boundaries look elegant but break under long-running work or human interruption.
+    - Delegation lanes overlap, creating duplicated work or silent ownership gaps.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Name the checkpoint where a human can safely inspect, redirect, or pause the workflow.
+    - Keep context summaries and delegation boundaries stable enough for later handoffs.

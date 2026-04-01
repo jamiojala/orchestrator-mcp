@@ -1,0 +1,36 @@
+name: Prompt Pack Documenter
+slug: prompt-pack-documenter
+description: Turn advanced agent workflows into reusable skill and prompt packs with trigger rules, output contracts, and maintainable docs.
+public: true
+category: docs
+tags:
+  - prompt-pack
+  - skills
+  - docs
+  - workflow
+preferred_models:
+  - meta/llama-3.3-70b-instruct
+  - "qwen3-coder:480b-cloud"
+  - "llama3.1:8b"
+prompt_template: |
+  Take a complex agent workflow and package it into reusable, portable documentation with trigger rules, required context, and clear deliverables.
+  Bias toward maintainable structure so another maintainer can update the pack when the workflow or product changes.
+  Return the documentation shape, missing context, and examples required for reliable reuse.
+validation:
+  - verify_prompt_usability
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - prompt pack
+    - skill docs
+    - workflow documentation
+    - portable skills
+  file_globs:
+    - **/*.md
+    - **/skills/**
+    - **/prompts/**
+    - **/docs/**
+  task_types:
+    - content
+    - review
+    - architecture

@@ -1,0 +1,36 @@
+name: AI Portfolio Router
+slug: ai-portfolio-router
+description: Allocate work across local, cloud, and premium models so teams maximize capability coverage per dollar and per latency budget.
+public: true
+category: routing
+tags:
+  - portfolio
+  - routing
+  - roi
+  - models
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - meta/llama-3.3-70b-instruct
+  - "deepseek-r1:32b"
+prompt_template: |
+  Map the current workload mix across local, cloud, and premium models, then recommend a portfolio that improves capability coverage without uncontrolled spend.
+  Separate high-stakes, latency-sensitive, and bulk-work lanes clearly.
+  Return tradeoffs, recommended defaults, and the signals that should trigger escalation to more expensive models.
+validation:
+  - verify_roi_assumptions
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - model portfolio
+    - ai roi
+    - routing strategy
+    - budget pressure
+  file_globs:
+    - **/*.md
+    - **/budgets/**
+    - **/routing/**
+    - **/config/**
+  task_types:
+    - reasoning
+    - architecture
+    - content

@@ -1,0 +1,60 @@
+skill_id: prompt-pack-documenter
+name: Prompt Pack Documenter
+version: 1.0.0
+category: docs
+superpower: Turn advanced agent workflows into reusable skill and prompt packs with trigger rules, output contracts, and maintainable docs.
+system_prompt: |
+  Take a complex agent workflow and package it into reusable, portable documentation with trigger rules, required context, and clear deliverables.
+  Bias toward maintainable structure so another maintainer can update the pack when the workflow or product changes.
+  Return the documentation shape, missing context, and examples required for reliable reuse.
+trigger_conditions:
+  keywords:
+    - prompt pack
+    - skill docs
+    - workflow documentation
+    - portable skills
+  file_patterns:
+    - **/*.md
+    - **/skills/**
+    - **/prompts/**
+    - **/docs/**
+  task_types:
+    - content
+    - review
+    - architecture
+model_preferences:
+  preferred:
+    - meta/llama-3.3-70b-instruct
+    - "qwen3-coder:480b-cloud"
+    - "llama3.1:8b"
+validation_hooks:
+  -
+    tool: verify_prompt_usability
+    required: true
+    params:
+  -
+    tool: verify_text_unchanged
+    required: false
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Pairs well with orchestration, api, and release packs when a workflow needs to travel cleanly.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - Portable pack docs drift from the real runtime surface after the next product change.
+    - The pack becomes reusable in theory but underspecified in actual agent handoffs.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Cross-link the pack to the runtime or code surface it documents so drift is easier to spot.
+    - Version the examples or assumptions that are likely to change quickly.

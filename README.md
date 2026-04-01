@@ -41,7 +41,7 @@ Browse, inspect, and export standalone skill packs even if you do not want to ru
 - Streamlit dashboard for recent runs, cache hits, failures, and estimated spend
 - YAML skill registry for reusable routing rules and validation logic
 - Safe git-analysis helpers for commit messages, PR descriptions, and review summaries without mutating the repo
-- Built-in portable marketplace with browse and export commands for teams that want the skills without the full MCP runtime
+- 120 real on-disk skill packs with a 100-skill global marketplace plus 20 advanced first-party packs for teams that want the skills without the full MCP runtime
 
 ## Why it matters
 
@@ -67,7 +67,7 @@ pip install "orchestrator-mcp[dashboard]"
 ### Contributor install
 
 ```bash
-pip install -e ".[dashboard,docs,dev]"
+pip install -e ".[dashboard,dev]"
 ```
 
 Use the Python executable that installed the package. If your machine exposes `python3` instead of `python`, substitute that in the snippets below.
@@ -193,9 +193,11 @@ orchestrator-mcp skills export-category --category security --to ./exported-skil
 
 The marketplace includes:
 
-- a 100-skill core catalog across 10 domains
-- curated first-party packs already stored in `skills/`
-- standalone exports with `SKILL.md`, `skill.yaml`, and `marketplace.yaml`
+- a 120-pack on-disk library in `skills/`
+- a 100-skill core marketplace across 10 domains
+- 20 advanced first-party packs for orchestration, safety, routing, release hygiene, and AI optimization
+- standalone packs with `README.md`, `SKILL.md`, `skill.yaml`, and `marketplace.yaml`
+- real folders you can copy individually into Codex, Claude-oriented workflows, or other markdown-first agent setups
 
 ## CLI
 
@@ -210,7 +212,7 @@ orchestrator-mcp cinematic-upgrade --path ./your-project
 ## Repository layout
 
 - `src/orchestrator_mcp/`: core package
-- `skills/`: skill manifests and first-party packs
+- `skills/`: 120-pack on-disk skill library and portable manifests
 - `examples/`: copy-paste client config examples
 - `docs/`: MkDocs site content
 - `tests/`: regression and safety coverage
@@ -222,7 +224,8 @@ orchestrator-mcp cinematic-upgrade --path ./your-project
 python3 -m py_compile llm_delegator_mcp.py scripts/check_public_repo.py src/orchestrator_mcp/*.py tests/*.py
 pytest
 python3 scripts/check_public_repo.py
-mkdocs build --strict
+npm install
+npm run docs:build
 ```
 
 ## Documentation
@@ -234,7 +237,8 @@ https://jamiojala.github.io/orchestrator-mcp/
 You can also serve docs locally:
 
 ```bash
-mkdocs serve
+npm install
+npm run docs:dev
 ```
 
 ## Who this is for

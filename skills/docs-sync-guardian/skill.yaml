@@ -1,0 +1,26 @@
+name: Docs Sync Guardian
+slug: docs-sync-guardian
+description: Keep README, docs, examples, and CLI behavior aligned so public repos do not drift out of date.
+public: true
+category: docs
+tags:
+  - docs
+  - readme
+  - examples
+  - drift
+preferred_models:
+  - gemini-2.5-flash
+  - "qwen3-coder:480b-cloud"
+prompt_template: Review implementation, examples, and documentation together. Find drift, missing steps, and misleading instructions.
+validation:
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - docs sync
+    - readme drift
+    - docs rot
+    - example drift
+  file_globs:
+  task_types:
+    - review
+    - content

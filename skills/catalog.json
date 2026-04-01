@@ -1,16 +1,1570 @@
 {
-  "version": 1,
+  "version": 2,
+  "summary": {
+    "total": 120,
+    "first_party": 20,
+    "superpower_global": 100
+  },
   "skills": [
-    {"slug": "cinematic-upgrade", "category": "design", "portable": false},
-    {"slug": "public-repo-sanitizer", "category": "release", "portable": true},
-    {"slug": "mcp-server-hardening", "category": "security", "portable": true},
-    {"slug": "multi-agent-prd-breakdown", "category": "orchestration", "portable": true},
-    {"slug": "failure-replay-lab", "category": "debugging", "portable": true},
-    {"slug": "cost-router-tuner", "category": "routing", "portable": true},
-    {"slug": "design-system-drift-audit", "category": "design", "portable": true},
-    {"slug": "api-contract-diff", "category": "api", "portable": true},
-    {"slug": "docs-sync-guardian", "category": "docs", "portable": true},
-    {"slug": "test-matrix-generator", "category": "testing", "portable": true},
-    {"slug": "threat-model-synthesizer", "category": "security", "portable": true}
+    {
+      "slug": "accessibility-auditor-pro",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "accessibility-first-navigator",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "accessible-motion-designer",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "agent-handoff-designer",
+      "category": "design",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "ai-portfolio-router",
+      "category": "routing",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "animation-budget-guardian",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-contract-diff",
+      "category": "api",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-deprecation-strategist",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-documentation-generator",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-fuzzing-strategist",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-pagination-architect",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-test-contract-enforcer",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "api-versioning-strategist",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "audit-log-immutability-guardian",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "bilingual-content-sync",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "bilingual-seo-architect",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "blue-green-deployer",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "burn-rate-calculator",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "changelog-curator",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "cinematic-upgrade",
+      "category": "design",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "circuit-breaker-weaver",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "cohort-retention-engineer",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "competitive-intelligence-analyst",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "component-composition-optimizer",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "content-security-policy-architect",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "context-window-cartographer",
+      "category": "orchestration",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "cors-policy-hardening",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "cost-allocation-tagging",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "cost-router-tuner",
+      "category": "routing",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "cqrs-pattern-synthesizer",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "css-container-query-migrator",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "customer-health-scorer",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "dark-mode-architect",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "data-migration-blueprinter",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "data-quality-sentinel",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "data-warehouse-modeler",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "database-per-tenant-designer",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "dead-code-eliminator",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "dependency-supply-chain-auditor",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "design-system-drift-audit",
+      "category": "design",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "design-token-synchronizer",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "disaster-recovery-planner",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "docker-layer-optimizer",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "docs-sync-guardian",
+      "category": "docs",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "e2e-data-seeder",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "empty-state-storyteller",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "env-secret-rotator",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "error-boundary-weaver",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "error-message-humanizer",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "event-driven-sync-engine",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "event-sourcing-architect",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "exit-readiness-assessor",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "experimentation-platform-builder",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "failure-replay-lab",
+      "category": "debugging",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "feature-flag-architect",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "feature-store-architect",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "flaky-test-detective",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "form-validation-architect",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "funnel-conversion-analyst",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "gdpr-by-design-architect",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "github-actions-optimizer",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "grant-proposal-architect",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "graphql-federation-gateway",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "graphql-query-complexity-guard",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "hallucination-regression-hunter",
+      "category": "testing",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "idempotency-guardian",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "image-optimization-pipeline",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "incident-communication-drafter",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "ip-strategy-documenter",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "jwt-rotation-engineer",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "keyboard-navigation-engineer",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "kubernetes-manifest-weaver",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "liquid-glass-enforcer",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "load-test-calibrator",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "log-aggregation-architect",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "mcp-server-hardening",
+      "category": "security",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "micro-frontend-orchestrator",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "microcopy-voice-tuner",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "mobile-first-gestures",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "model-latency-budgeter",
+      "category": "routing",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "multi-agent-prd-breakdown",
+      "category": "orchestration",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "mutation-testing-agent",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "notification-strategy-designer",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "observability-dashboard-synthesizer",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "onboarding-flow-optimizer",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "open-source-maintainer-assistant",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "openapi-spec-generator",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "owasp-top-10-guardian",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "performance-regression-guard",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "privacy-preserving-analytics",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "progressive-web-app-builder",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "prompt-injection-firebreak",
+      "category": "security",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "prompt-pack-documenter",
+      "category": "docs",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "public-repo-sanitizer",
+      "category": "release",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "rate-limiting-architect",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "real-time-analytics-pipeline",
+      "category": "data",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "real-time-sync-engineer",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "retrieval-grounding-optimizer",
+      "category": "data",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "safe-note-documenter",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "search-ux-optimizer",
+      "category": "product",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "secrets-scanning-automator",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "security-scan-automator",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "server-timing-analyzer",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "serverless-cost-optimizer",
+      "category": "architecture",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "soc2-control-documenter",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "ssg-island-architect",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "svg-icon-system-builder",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "technical-debt-banker",
+      "category": "business",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "technical-documentation-weaver",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "terraform-module-architect",
+      "category": "devops",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "test-matrix-generator",
+      "category": "testing",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "threat-model-synthesizer",
+      "category": "security",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "tool-contract-normalizer",
+      "category": "api",
+      "portable": true,
+      "source": "first_party",
+      "marketplace_backed": false,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "video-script-technical-writer",
+      "category": "content",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "virtual-scrolling-calibrator",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "visual-regression-architect",
+      "category": "qa",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "vulnerability-patch-prioritizer",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "web-vitals-interventionist",
+      "category": "frontend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "webhook-security-designer",
+      "category": "backend",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    },
+    {
+      "slug": "zero-trust-network-designer",
+      "category": "security",
+      "portable": true,
+      "source": "superpower_global",
+      "marketplace_backed": true,
+      "files": [
+        "README.md",
+        "SKILL.md",
+        "skill.yaml",
+        "marketplace.yaml"
+      ]
+    }
   ]
 }

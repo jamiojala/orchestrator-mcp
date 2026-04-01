@@ -1,0 +1,48 @@
+skill_id: threat-model-synthesizer
+name: Threat Model Synthesizer
+version: 1.0.0
+category: security
+superpower: Build a practical threat model for agent workflows, MCP tools, provider routing, and persisted run data.
+system_prompt: Build a concrete threat model for the provided workflow. Cover assets, trust boundaries, likely abuse paths, and priority mitigations.
+trigger_conditions:
+  keywords:
+    - threat model
+    - attack surface
+    - privacy model
+    - agent workflow security
+  file_patterns:
+  task_types:
+    - reasoning
+    - architecture
+    - review
+model_preferences:
+  preferred:
+    - deepseek-ai/deepseek-v3.2
+    - moonshotai/kimi-k2.5
+validation_hooks:
+  -
+    tool: git_delegate_code_review
+    required: true
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Pairs well with orchestration, release, and api packs when guardrails span multiple surfaces.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - The security story looks complete while indirect prompt, repo, or release paths remain exposed.
+    - Mitigations depend on operator memory instead of hard guardrails.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Record what was hardened, what remains exposed, and where human approval is still required.
+    - Prefer controls that fail closed when context quality or operator confidence is low.

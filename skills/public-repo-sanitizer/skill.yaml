@@ -1,0 +1,30 @@
+name: Public Repo Sanitizer
+slug: public-repo-sanitizer
+description: Audit a repo for secrets, personal paths, client-specific references, and OSS-readiness gaps before publishing.
+public: true
+category: release
+tags:
+  - security
+  - release
+  - open-source
+  - hygiene
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - gemini-2.5-pro
+prompt_template: |
+  Review the provided repo snapshot for anything that should not ship publicly.
+  Flag secrets, private paths, client references, brittle docs, and configuration hazards.
+validation:
+  - git_delegate_code_review
+triggers:
+  keywords:
+    - open source
+    - public repo
+    - sanitize
+    - release
+    - publish
+    - secret scan
+  file_globs:
+  task_types:
+    - review
+    - architecture

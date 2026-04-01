@@ -1,35 +1,34 @@
-# Skills
+# Skills Library
 
-`orchestrator-mcp` now supports two skill formats:
+`orchestrator-mcp` now ships a 120-pack on-disk skill library built for portable agent workflows, MCP runtime loading, and web-facing discoverability.
 
-- local `skill.yaml` manifests
-- portable `SKILL.md` packs with frontmatter
+## What is in the library
 
-That makes the repo useful both as a runtime registry and as a downloadable skill library.
+- 20 advanced first-party packs focused on orchestration, safety, release hygiene, and AI-optimization work.
+- 100 Superpower Tier global library packs covering the exact cross-domain catalog defined for the project.
+- Every pack ships with `README.md`, `SKILL.md`, `skill.yaml`, and `marketplace.yaml`.
 
-## Included first-party library
+## Browse by domain
 
-- cinematic-upgrade
-- public-repo-sanitizer
-- mcp-server-hardening
-- multi-agent-prd-breakdown
-- failure-replay-lab
-- cost-router-tuner
-- design-system-drift-audit
-- api-contract-diff
-- docs-sync-guardian
-- test-matrix-generator
-- threat-model-synthesizer
+- [Advanced First-Party Packs](skills-categories/advanced-packs.md): 20 skills
+- [Architecture & System Design](skills-categories/architecture.md): 10 skills
+- [Frontend Engineering](skills-categories/frontend.md): 15 skills
+- [Backend & API Design](skills-categories/backend.md): 12 skills
+- [Quality Assurance](skills-categories/qa.md): 10 skills
+- [DevOps & Infrastructure](skills-categories/devops.md): 10 skills
+- [Security & Compliance](skills-categories/security.md): 10 skills
+- [Data & Analytics](skills-categories/data.md): 8 skills
+- [Product & UX](skills-categories/product.md): 10 skills
+- [Content & Communication](skills-categories/content.md): 8 skills
+- [Business & Operations](skills-categories/business.md): 7 skills
 
-See `skills/README.md` for install and portability guidance.
+## Why these pages exist
 
-## Marketplace commands
+The repo now materializes the skill library as real files and real web pages instead of hiding most of the catalog behind runtime-only export commands. That makes the catalog easier to browse, index, audit, and reuse.
 
-```bash
-orchestrator-mcp skills list
-orchestrator-mcp skills show liquid-glass-enforcer
-orchestrator-mcp skills export liquid-glass-enforcer --to ./exported-skills
-orchestrator-mcp skills export-category --category security --to ./exported-skills
-```
+## SEO and portability surface
 
-This makes the repo useful even for teams that do not want the MCP runtime and only want portable skill packs.
+- Search-friendly category pages with stable skill headings
+- Portable pack files stored directly in the repository
+- Internal linking between the landing page and each domain page
+- Consistent metadata across runtime, marketplace, and docs surfaces

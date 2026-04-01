@@ -1,0 +1,26 @@
+name: API Contract Diff
+slug: api-contract-diff
+description: Compare two API or schema revisions and surface behavioral breakage, migration steps, and compatibility risk.
+public: true
+category: api
+tags:
+  - api
+  - schema
+  - diff
+  - compatibility
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - "qwen3-coder:480b-cloud"
+prompt_template: Compare the old and new contracts, identify behavior changes, and classify migration risk for clients and tests.
+validation:
+  - generate_diff
+triggers:
+  keywords:
+    - api diff
+    - schema diff
+    - breaking change
+    - compatibility
+  file_globs:
+  task_types:
+    - review
+    - reasoning

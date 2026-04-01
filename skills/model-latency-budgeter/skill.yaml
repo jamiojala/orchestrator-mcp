@@ -1,0 +1,35 @@
+name: Model Latency Budgeter
+slug: model-latency-budgeter
+description: Tune timeout, retry, and concurrency budgets across multi-model routes so orchestration stays fast without silent quality collapse.
+public: true
+category: routing
+tags:
+  - latency
+  - timeouts
+  - routing
+  - budgets
+preferred_models:
+  - deepseek-ai/deepseek-v3.2
+  - "qwen3-coder:480b-cloud"
+  - "llama3.1:8b"
+prompt_template: |
+  Model the latency envelope for each routing lane, including retries, fallbacks, cache hits, and operator tolerance.
+  Recommend explicit timeout and concurrency budgets that protect both responsiveness and answer quality.
+  Call out where faster routes should degrade gracefully instead of timing out invisibly.
+validation:
+  - verify_latency_slo
+  - verify_text_unchanged
+triggers:
+  keywords:
+    - latency budget
+    - timeout policy
+    - model concurrency
+    - routing policy
+  file_globs:
+    - **/*.yaml
+    - **/*.yml
+    - **/routing/**
+    - **/config/**
+  task_types:
+    - architecture
+    - reasoning

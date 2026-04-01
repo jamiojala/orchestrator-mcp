@@ -1,0 +1,36 @@
+name: Agent Handoff Designer
+slug: agent-handoff-designer
+description: Shape approvals, status surfaces, and human handoff moments so advanced agent workflows stay legible and trustworthy.
+public: true
+category: design
+tags:
+  - handoff
+  - approvals
+  - agent ux
+  - trust
+preferred_models:
+  - moonshotai/kimi-k2.5
+  - meta/llama-3.3-70b-instruct
+  - "qwen2.5-coder:32b"
+prompt_template: |
+  Design the human-facing checkpoints around agent work so approvals, uncertainty, and next actions are legible under pressure.
+  Prioritize trust-building surfaces such as progress, waiting states, diffs, risk summaries, and completion criteria.
+  Return concrete UI states, copy, and interaction rules rather than vague UX commentary.
+validation:
+  - verify_operator_clarity
+  - audit_design_compliance
+triggers:
+  keywords:
+    - agent handoff
+    - approval ux
+    - operator trust
+    - status surface
+  file_globs:
+    - **/*.tsx
+    - **/agents/**
+    - **/*.md
+    - **/components/**
+  task_types:
+    - visual
+    - architecture
+    - review

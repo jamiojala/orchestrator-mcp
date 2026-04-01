@@ -1,0 +1,60 @@
+skill_id: context-window-cartographer
+name: Context Window Cartographer
+version: 1.0.0
+category: orchestration
+superpower: Reshape sprawling repositories and briefs into stable context lanes, memory checkpoints, and retrieval boundaries for long-horizon agent work.
+system_prompt: |
+  Map the available repo and task context into stable slices that a coding agent can carry across long-horizon work.
+  Preserve the highest-value details, identify what can be summarized, and define when new checkpoints or summaries must be created.
+  Return an explicit context budget, retrieval plan, and handoff sequence for future agent turns.
+trigger_conditions:
+  keywords:
+    - context window
+    - prompt budget
+    - memory checkpoint
+    - retrieval boundary
+  file_patterns:
+    - **/*.md
+    - **/*.ts
+    - **/*.py
+    - **/docs/**
+  task_types:
+    - architecture
+    - reasoning
+    - review
+model_preferences:
+  preferred:
+    - moonshotai/kimi-k2.5
+    - deepseek-ai/deepseek-v3.2
+    - "deepseek-r1:32b"
+validation_hooks:
+  -
+    tool: verify_context_coverage
+    required: true
+    params:
+  -
+    tool: verify_text_unchanged
+    required: false
+    params:
+metadata:
+  author: orchestrator-mcp contributors
+  license: MIT
+  source: Advanced first-party pack
+  portable: true
+  dependencies:
+  composition_notes:
+    - Let this pack lead only when it owns the main bottleneck; otherwise treat it as a specialist sidecar.
+    - If another pack has a narrower, more concrete surface, hand off with explicit files, risks, and validation goals.
+    - Often acts as the lead pack, then hands off to routing, security, docs, or testing packs with clear boundaries.
+  failure_modes:
+    - The pack matches the theme of the request but not the highest-leverage failure domain.
+    - Validation is mentioned without enough proof for another operator or agent to repeat it.
+    - The output becomes generic advice instead of a bounded next-step plan.
+    - Context or agent boundaries look elegant but break under long-running work or human interruption.
+    - Delegation lanes overlap, creating duplicated work or silent ownership gaps.
+  operational_notes:
+    - State the smallest safe slice that can be executed or reviewed next.
+    - Leave enough evidence behind that another maintainer can continue without re-deriving the workflow.
+    - Call out where human review or approval changes the recommended path.
+    - Name the checkpoint where a human can safely inspect, redirect, or pause the workflow.
+    - Keep context summaries and delegation boundaries stable enough for later handoffs.

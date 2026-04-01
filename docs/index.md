@@ -1,172 +1,241 @@
-<section class="omcp-hero">
-  <div class="omcp-hero__inner">
-    <div class="omcp-hero__copy">
-      <p class="omcp-eyebrow">Local-first MCP orchestration</p>
-      <h1>One orchestration layer for every serious coding model.</h1>
-      <p class="omcp-hero__lead">
-        Run a shared local MCP server for Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA-backed models.
-        Or use this repo purely as a portable skill marketplace and export the packs you want.
+---
+layout: home
+title: orchestrator-mcp
+titleTemplate: false
+hero:
+  name: orchestrator-mcp
+  text: Run one local orchestration layer. Export the skills anywhere.
+  tagline: Local-first MCP server and portable skill marketplace for Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA-backed models.
+  image:
+    src: /logo-mark.svg
+    alt: orchestrator-mcp
+  actions:
+    - theme: brand
+      text: Get started
+      link: /quickstart
+    - theme: alt
+      text: One-paste installs
+      link: /one-paste-installs
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/jamiojala/orchestrator-mcp
+---
+
+<div class="omcp-home-shell">
+  <div class="omcp-client-band" aria-label="Supported clients and providers">
+    <span>Codex</span>
+    <span>Claude Code</span>
+    <span>Kimi Code</span>
+    <span>Ollama</span>
+    <span>Gemini</span>
+    <span>NVIDIA-backed models</span>
+  </div>
+</div>
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">What this is</p>
+  <h2>One repo, two clean adoption paths.</h2>
+  <p class="omcp-lead">
+    <code>orchestrator-mcp</code> turns a messy multi-model setup into one local control surface for routing,
+    safety, caching, fallback behavior, and portable skill reuse. It is built for developers who
+    already move between clients and models instead of pretending one silo wins every task.
+  </p>
+  <div class="omcp-grid omcp-grid--three">
+    <article class="omcp-panel">
+      <p class="omcp-label">Shared runtime</p>
+      <h3>One local orchestration layer</h3>
+      <p>
+        Run one MCP server for serious coding workflows instead of rebuilding prompt glue,
+        routing policy, and fallback behavior inside every client.
       </p>
-      <div class="omcp-hero__actions" markdown="1">
-        [Get started](quickstart.md){ .md-button .md-button--primary }
-        [Browse marketplace](marketplace.md){ .md-button }
-        [View on GitHub](https://github.com/jamiojala/orchestrator-mcp){ .md-button }
-      </div>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Portable packs</p>
+      <h3>One skill library that travels</h3>
+      <p>
+        Use the repo as a standalone skill marketplace when you only want the packs. Export them,
+        copy them, or keep the runtime out of the picture entirely.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Operational sanity</p>
+      <h3>One place to keep the rules</h3>
+      <p>
+        Budget pressure, secret redaction, release hygiene, semantic caching, and validation stay
+        visible and reusable instead of getting lost inside one editor or provider.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Use it two ways</p>
+  <h2>Adopt the layer you actually need.</h2>
+  <p class="omcp-lead">
+    Run the full local runtime when you want shared orchestration. Export only the library when you
+    want portable skills with no client lock-in.
+  </p>
+  <div class="omcp-grid omcp-grid--two">
+    <article class="omcp-panel">
+      <p class="omcp-label">Path 01</p>
+      <h3>Run the MCP server</h3>
+      <p>Use one shared local layer for clients that can talk MCP.</p>
+      <ul class="omcp-list">
+        <li>Shared routing, fallback logic, and provider policy</li>
+        <li>Budget-aware execution and semantic caching</li>
+        <li>Safety checks and observability in one place</li>
+      </ul>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Path 02</p>
+      <h3>Use only the skill marketplace</h3>
+      <p>Take the packs without taking the runtime.</p>
+      <ul class="omcp-list">
+        <li>120 on-disk packs checked into the repository</li>
+        <li>100-skill global library plus 20 advanced first-party packs</li>
+        <li>
+          Portable <code>SKILL.md</code>, <code>skill.yaml</code>, <code>marketplace.yaml</code>,
+          and <code>README.md</code> surfaces
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+### Runtime path
+
+```bash
+pip install "orchestrator-mcp[dashboard]"
+cp .env.example .env
+cp orchestrator-mcp.yaml.example orchestrator-mcp.yaml
+orchestrator-mcp doctor
+orchestrator-mcp serve
+```
+
+### Marketplace path
+
+```bash
+orchestrator-mcp skills list
+orchestrator-mcp skills show liquid-glass-enforcer
+orchestrator-mcp skills export-category --category frontend --to ./exported-skills
+```
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Install in minutes</p>
+  <h2>Wire it into the clients you already use.</h2>
+  <p class="omcp-lead">
+    Plug the local runtime into Codex, Claude Code, or Kimi Code with a standard <code>stdio</code>
+    MCP setup. If your machine exposes <code>python3</code> instead of <code>python</code>, swap the executable accordingly.
+  </p>
+</section>
+
+::: code-group
+```bash [Codex]
+codex mcp add orchestrator -- python -m orchestrator_mcp.cli serve
+```
+
+```bash [Claude Code]
+claude mcp add orchestrator -- python -m orchestrator_mcp.cli serve
+```
+
+```bash [Kimi Code]
+# transport: stdio
+# command: python
+# args: -m orchestrator_mcp.cli serve
+```
+:::
+
+```bash
+pip install "orchestrator-mcp[dashboard]"
+orchestrator-mcp doctor
+orchestrator-mcp serve
+```
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Why teams keep it in the loop</p>
+  <h2>Trust comes from explicit tradeoffs.</h2>
+  <p class="omcp-lead">
+    This project earns trust by making the hard parts of multi-model work explicit instead of hiding
+    them behind a shiny client wrapper.
+  </p>
+  <div class="omcp-grid omcp-grid--two">
+    <article class="omcp-panel">
+      <p class="omcp-label">Routing</p>
+      <h3>Cost-aware by default</h3>
+      <p>
+        Shape fallback lanes, poor-man's mode, and local-first defaults instead of paying premium
+        rates for every request by accident.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Safety</p>
+      <h3>Guardrails live in the orchestration layer</h3>
+      <p>
+        Secret redaction, prompt blocking, model validation, and release hygiene stay attached to
+        the workflow instead of depending on editor memory.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Reuse</p>
+      <h3>Skills are first-class assets</h3>
+      <p>
+        The library is materialized on disk, categorized for the web, and portable enough to move
+        between agent ecosystems without rebuilding everything from scratch.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Visibility</p>
+      <h3>Fallbacks and failures stay visible</h3>
+      <p>
+        Recent runs, cache hits, spend, and failure paths become inspectable instead of disappearing
+        into ad hoc model calls.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Portable marketplace</p>
+  <div class="omcp-slab">
+    <div>
+      <h3>The runtime is optional. The packs are not trapped.</h3>
+      <p>
+        The marketplace ships as real repository folders, not a hidden export format. Browse the web
+        catalog, inspect individual packs, or copy the ones you want into your own setup.
+      </p>
+      <ul class="omcp-metrics">
+        <li>120 total pack folders in <code>skills/</code></li>
+        <li>100 canonical global-library skills across 10 domains</li>
+        <li>20 advanced first-party packs for orchestration, routing, safety, and AI optimization</li>
+      </ul>
     </div>
-    <div class="omcp-hero__visual" aria-hidden="true">
-      <span class="omcp-signal omcp-signal--alpha">Budget routing</span>
-      <span class="omcp-signal omcp-signal--beta">Semantic cache</span>
-      <span class="omcp-signal omcp-signal--gamma">Skill exports</span>
-      <span class="omcp-signal omcp-signal--delta">Safe fallback</span>
-      <span class="omcp-signal omcp-signal--epsilon">MCP-compatible</span>
+    <div>
+      <p class="omcp-lead">
+        Start with the <a href="/orchestrator-mcp/marketplace">marketplace guide</a> for the catalog or jump into the
+        <a href="/orchestrator-mcp/skills">skills library</a> if you want the categorized on-site index.
+      </p>
     </div>
   </div>
 </section>
 
-<div class="omcp-trust-strip" aria-label="Supported clients and providers">
-  <span>Codex</span>
-  <span>Claude Code</span>
-  <span>Kimi Code</span>
-  <span>Ollama</span>
-  <span>Gemini</span>
-  <span>NVIDIA-backed models</span>
-</div>
+```bash
+orchestrator-mcp skills list
+orchestrator-mcp skills show micro-frontend-orchestrator
+orchestrator-mcp skills export micro-frontend-orchestrator --to ./exported-skills
+```
 
-## Why it matters
-
-Most agent setups are fragmented.
-
-You use one model for repo-native implementation, another for long-form reasoning, another for multimodal review, and maybe Ollama for cheap local capacity. `orchestrator-mcp` turns that sprawl into one reusable local layer with routing, safety, caching, fallback logic, and observability.
-
-<div class="omcp-triptych" markdown="1">
-  <div>
-    <p class="omcp-kicker">The stack</p>
-    ### Different models win different moments
-
-    Repo-native implementation, long-form reasoning, IDE-first iteration, multimodal review, and cheap local capacity rarely live in one client.
-  </div>
-  <div>
-    <p class="omcp-kicker">The layer</p>
-    ### Keep orchestration local and reusable
-
-    Run one shared MCP surface across tools instead of rebuilding routing, safety rules, and prompt glue in every editor.
-  </div>
-  <div>
-    <p class="omcp-kicker">The payoff</p>
-    ### Spend less and lose less context
-
-    Route by budget, cache repeated work, export portable skills, and keep fallback logic visible instead of buried in ad hoc prompts.
-  </div>
-</div>
-
-<div class="omcp-feature-band" markdown="1">
-  <div>
-    **Local-first MCP server**  
-    Shared orchestration surface for MCP-capable coding clients.
-  </div>
-  <div>
-    **Portable skill marketplace**  
-    Export standalone skill packs with `SKILL.md`, `skill.yaml`, and marketplace metadata.
-  </div>
-  <div>
-    **Safety by default**  
-    Secret redaction, malicious prompt blocking, release hygiene scanning, and model validation.
-  </div>
-  <div>
-    **Cost-aware routing**  
-    Fallback chains, budget pressure, local-first modes, and semantic caching.
-  </div>
-</div>
-
-## Install in minutes
-
-=== "Codex"
-
-    ```bash
-    codex mcp add orchestrator -- python -m orchestrator_mcp.cli serve
-    ```
-
-=== "Claude Code"
-
-    ```bash
-    claude mcp add orchestrator -- python -m orchestrator_mcp.cli serve
-    ```
-
-=== "Kimi Code"
-
-    Use a local MCP server with `stdio` transport:
-
-    - Command: `python`
-    - Args: `-m orchestrator_mcp.cli serve`
-
-Use the Python executable that installed the package. If your system uses `python3` instead of `python`, swap the command accordingly.
-
-See the full [one-paste install guide](one-paste-installs.md).
-
-## Use it two ways
-
-<div class="omcp-paths" markdown="1">
-  <div class="omcp-path">
-    <p class="omcp-kicker">Path 01</p>
-    ### Run the MCP server
-
-    Shared routing, safety, caching, fallback logic, and observability for every client that can talk MCP.
-
-    ```bash
-    pip install "orchestrator-mcp[dashboard]"
-    cp .env.example .env
-    cp orchestrator-mcp.yaml.example orchestrator-mcp.yaml
-    orchestrator-mcp doctor
-    orchestrator-mcp serve
-    ```
-  </div>
-  <div class="omcp-path">
-    <p class="omcp-kicker">Path 02</p>
-    ### Use only the skill marketplace
-
-    Browse the catalog, inspect a pack, and export only the skills you want to reuse elsewhere.
-
-    ```bash
-    orchestrator-mcp skills list
-    orchestrator-mcp skills show liquid-glass-enforcer
-    orchestrator-mcp skills export liquid-glass-enforcer --to ./exported-skills
-    ```
-  </div>
-</div>
-
-## Portable marketplace, not lock-in
-
-<div class="omcp-marketplace" markdown="1">
-  <div>
-    <p class="omcp-kicker">Marketplace highlight</p>
-    ### Take the packs without taking the runtime
-
-    The marketplace ships a 100-skill core catalog across 10 domains, plus curated first-party packs that already know how to travel between agent ecosystems.
-
-    What you keep:
-
-    - Backward-compatible MCP tools
-    - Exportable `SKILL.md` packs
-    - Rich marketplace metadata
-    - GitHub Pages publishing baked in
-  </div>
-  <div>
-    ```bash
-    orchestrator-mcp skills list
-    orchestrator-mcp skills show micro-frontend-orchestrator
-    orchestrator-mcp skills export-category --category frontend --to ./exported-skills
-    ```
-
-    Start with the [marketplace](marketplace.md) for the catalog, or jump to [quickstart](quickstart.md) if you want the full local server.
-  </div>
-</div>
-
-<div class="omcp-cta" markdown="1">
-### Start with the surface you need today
-
-Use the full runtime if you want shared routing and observability. Export only the marketplace if you just want portable skills.
-
-[Open Quickstart](quickstart.md){ .md-button .md-button--primary }
-[See one-paste installs](one-paste-installs.md){ .md-button }
-[Read the marketplace guide](marketplace.md){ .md-button }
+<div class="omcp-home-shell">
+  <section class="omcp-final-cta">
+    <p class="omcp-label">Start here</p>
+    <h2>Bring order to the model sprawl.</h2>
+    <p>
+      Run the local orchestration layer when you want shared routing and safety. Take the packs when
+      you only want portable skills. Either way, the surface is built for real adoption, not demo-only docs.
+    </p>
+    <div class="omcp-action-row">
+      <a class="omcp-button omcp-button--brand" href="/orchestrator-mcp/quickstart">Open Quickstart</a>
+      <a class="omcp-button" href="/orchestrator-mcp/one-paste-installs">See one-paste installs</a>
+      <a class="omcp-button" href="/orchestrator-mcp/marketplace">Browse the marketplace</a>
+    </div>
+  </section>
 </div>

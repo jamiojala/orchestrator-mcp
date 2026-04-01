@@ -1,6 +1,10 @@
 # One-Paste Installs
 
-Use the Python executable that installed the package. If your machine exposes `python3` instead of `python`, substitute that in the snippets below.
+<p class="omcp-lead">
+  These are the cleanest client wiring patterns for <code>orchestrator-mcp</code>. Use the same Python
+  executable that installed the package. If your machine exposes <code>python3</code> instead of <code>python</code>,
+  swap that value in every snippet below.
+</p>
 
 ## Codex
 
@@ -8,7 +12,7 @@ Use the Python executable that installed the package. If your machine exposes `p
 codex mcp add orchestrator -- python -m orchestrator_mcp.cli serve
 ```
 
-Config alternative:
+Config file alternative:
 
 ```toml
 [mcp_servers.orchestrator]
@@ -37,12 +41,29 @@ Project config example:
 
 ## Kimi Code
 
-Kimi Code documents local MCP setup through its MCP Servers UI.
-
-Use:
+Kimi Code documents local MCP setup through its MCP Servers UI. Use:
 
 - Transport: `stdio`
 - Command: `python`
 - Args: `-m orchestrator_mcp.cli serve`
 
 The repo also includes a generic stdio example in `examples/kimi-stdio.json`.
+
+## Generic MCP client
+
+Any client that can launch an `stdio` MCP server can use the same pattern:
+
+```bash
+python -m orchestrator_mcp.cli serve
+```
+
+## After wiring it in
+
+Once the client can start the runtime, validate the broader setup with:
+
+```bash
+orchestrator-mcp doctor
+```
+
+Then browse [Marketplace](./marketplace) if you want the portable packs, or head back to [Quickstart](./quickstart)
+if you still need the runtime path.
