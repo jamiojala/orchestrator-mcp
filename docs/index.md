@@ -1,14 +1,14 @@
 ---
 layout: home
-title: orchestrator-mcp
+title: SkillForge
 titleTemplate: false
 hero:
-  name: orchestrator-mcp
+  name: SkillForge
   text: Run one local orchestration layer. Export the skills anywhere.
-  tagline: Local-first MCP server and portable skill marketplace for Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA-backed models.
+  tagline: Local-first MCP orchestration and portable skill marketplace for Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA-backed models.
   image:
     src: /logo-mark.svg
-    alt: orchestrator-mcp
+    alt: SkillForge
   actions:
     - theme: brand
       text: Get started
@@ -18,7 +18,7 @@ hero:
       link: /one-paste-installs
     - theme: alt
       text: View on GitHub
-      link: https://github.com/jamiojala/orchestrator-mcp
+      link: https://github.com/jamiojala/skillforge
 ---
 
 <div class="omcp-home-shell">
@@ -30,13 +30,65 @@ hero:
     <span>Gemini</span>
     <span>NVIDIA-backed models</span>
   </div>
+
+  <div class="omcp-kpi-strip" aria-label="Library metrics">
+    <div class="omcp-kpi">
+      <strong>130</strong>
+      <span>pack folders on disk</span>
+    </div>
+    <div class="omcp-kpi">
+      <strong>110</strong>
+      <span>canonical marketplace skills</span>
+    </div>
+    <div class="omcp-kpi">
+      <strong>20</strong>
+      <span>advanced first-party packs</span>
+    </div>
+    <div class="omcp-kpi">
+      <strong>11</strong>
+      <span>core product domains</span>
+    </div>
+  </div>
 </div>
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Why this exists</p>
+  <h2>Most multi-model workflows are still held together with prompt glue.</h2>
+  <p class="omcp-lead">
+    Without a shared layer, teams repeat architecture context, lose routing policy inside individual
+    clients, and quietly pay for fragile fallbacks they can’t inspect. The problem is not model access.
+    The problem is orchestration discipline.
+  </p>
+  <div class="omcp-grid omcp-grid--three">
+    <article class="omcp-panel">
+      <p class="omcp-label">Context drift</p>
+      <h3>The same repo rules get re-explained again and again.</h3>
+      <p>
+        Architecture choices, cost policy, and safety expectations fade between tools and sessions.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Hidden tradeoffs</p>
+      <h3>Fallbacks and model spend become invisible.</h3>
+      <p>
+        One client routes one way, another client routes another way, and nobody can see the system-level behavior.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Locked expertise</p>
+      <h3>Good workflows get trapped inside one assistant.</h3>
+      <p>
+        Valuable skills stay glued to one vendor or editor instead of becoming reusable operational assets.
+      </p>
+    </article>
+  </div>
+</section>
 
 <section class="omcp-home-shell omcp-section">
   <p class="omcp-label">What this is</p>
   <h2>One repo, two clean adoption paths.</h2>
   <p class="omcp-lead">
-    <code>orchestrator-mcp</code> turns a messy multi-model setup into one local control surface for routing,
+    SkillForge turns a messy multi-model setup into one local control surface for routing,
     safety, caching, fallback behavior, and portable skill reuse. It is built for developers who
     already move between clients and models instead of pretending one silo wins every task.
   </p>
@@ -75,7 +127,7 @@ hero:
     Run the full local runtime when you want shared orchestration. Export only the library when you
     want portable skills with no client lock-in.
   </p>
-  <div class="omcp-grid omcp-grid--two">
+  <div class="omcp-grid omcp-grid--three">
     <article class="omcp-panel">
       <p class="omcp-label">Path 01</p>
       <h3>Run the MCP server</h3>
@@ -91,8 +143,8 @@ hero:
       <h3>Use only the skill marketplace</h3>
       <p>Take the packs without taking the runtime.</p>
       <ul class="omcp-list">
-        <li>120 on-disk packs checked into the repository</li>
-        <li>100-skill global library plus 20 advanced first-party packs</li>
+        <li>130 on-disk packs checked into the repository</li>
+        <li>110-skill global library plus 20 advanced first-party packs</li>
         <li>
           Portable <code>SKILL.md</code>, <code>skill.yaml</code>, <code>marketplace.yaml</code>,
           and <code>README.md</code> surfaces
@@ -195,6 +247,92 @@ orchestrator-mcp serve
 </section>
 
 <section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Pack anatomy</p>
+  <h2>Every pack says how it should activate, who should handle it, how it should think, and how it should be checked.</h2>
+  <p class="omcp-lead">
+    The strongest idea worth carrying over from the Kimi library is not the hype layer. It is the
+    explicit pack contract. In SkillForge, the useful parts are visible: trigger signals,
+    model chain, validation hooks, and portable files you can inspect directly.
+  </p>
+  <div class="omcp-grid omcp-grid--two">
+    <article class="omcp-panel">
+      <p class="omcp-label">Activation</p>
+      <h3>Trigger signals are explicit</h3>
+      <p>
+        Packs expose keywords, file patterns, and task-type hints so you can see why a skill belongs
+        in a workflow instead of treating it like hidden prompt magic.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Delegation</p>
+      <h3>Preferred model chains are part of the pack</h3>
+      <p>
+        Skills declare preferred model lanes and fallbacks, which makes routing policy inspectable and easier to tune.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Validation</p>
+      <h3>Checks live next to the workflow</h3>
+      <p>
+        Packs declare validation hooks so the quality bar is attached to the work itself rather than remembered later.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Persona</p>
+      <h3>Specialist posture is explicit</h3>
+      <p>
+        Generated marketplace packs now expose role, voice, reasoning pattern, and response shape so
+        they behave like specialist workflows instead of generic prompt wrappers.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Portability</p>
+      <h3>Useful files ship with the pack</h3>
+      <p>
+        <code>README.md</code>, <code>SKILL.md</code>, <code>skill.yaml</code>, and <code>marketplace.yaml</code>
+        give you human review context, portable instructions, structured registry loading, and richer metadata.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="omcp-home-shell omcp-section">
+  <p class="omcp-label">Persona architecture</p>
+  <h2>These packs are designed to think like specialists, not autocomplete like generalists.</h2>
+  <p class="omcp-lead">
+    The marketplace layer now carries explicit persona architecture on generated global-library packs:
+    role, voice, reasoning steps, verification habits, and response shape. That makes the packs more
+    legible, more portable, and much easier to audit when they leave the runtime.
+  </p>
+  <div class="omcp-grid omcp-grid--three">
+    <article class="omcp-panel">
+      <p class="omcp-label">Role</p>
+      <h3>Expert posture is inspectable</h3>
+      <p>
+        A pack can behave like a systems architect, UI craftsperson, DPO, or grant strategist instead
+        of flattening every request into the same generic assistant voice.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Method</p>
+      <h3>Reasoning patterns are visible</h3>
+      <p>
+        Verification checklists, analysis approach, and decision criteria sit next to the skill
+        instead of living in invisible system-prompt glue.
+      </p>
+    </article>
+    <article class="omcp-panel">
+      <p class="omcp-label">Output</p>
+      <h3>Response shape is predictable</h3>
+      <p>
+        Packs can ask for threat models, design intent, proposal strategy, or eval baselines in a
+        consistent format that another operator can review quickly.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section class="omcp-home-shell omcp-section">
   <p class="omcp-label">Portable marketplace</p>
   <div class="omcp-slab">
     <div>
@@ -204,15 +342,15 @@ orchestrator-mcp serve
         catalog, inspect individual packs, or copy the ones you want into your own setup.
       </p>
       <ul class="omcp-metrics">
-        <li>120 total pack folders in <code>skills/</code></li>
-        <li>100 canonical global-library skills across 10 domains</li>
+        <li>130 total pack folders in <code>skills/</code></li>
+        <li>110 canonical global-library skills across 11 domains</li>
         <li>20 advanced first-party packs for orchestration, routing, safety, and AI optimization</li>
       </ul>
     </div>
     <div>
       <p class="omcp-lead">
-        Start with the <a href="/orchestrator-mcp/marketplace">marketplace guide</a> for the catalog or jump into the
-        <a href="/orchestrator-mcp/skills">skills library</a> if you want the categorized on-site index.
+        Start with the <a href="/skillforge/marketplace.html">marketplace guide</a> for the catalog or jump into the
+        <a href="/skillforge/skills.html">skills library</a> if you want the categorized on-site index.
       </p>
     </div>
   </div>
@@ -233,9 +371,9 @@ orchestrator-mcp skills export micro-frontend-orchestrator --to ./exported-skill
       you only want portable skills. Either way, the surface is built for real adoption, not demo-only docs.
     </p>
     <div class="omcp-action-row">
-      <a class="omcp-button omcp-button--brand" href="/orchestrator-mcp/quickstart">Open Quickstart</a>
-      <a class="omcp-button" href="/orchestrator-mcp/one-paste-installs">See one-paste installs</a>
-      <a class="omcp-button" href="/orchestrator-mcp/marketplace">Browse the marketplace</a>
+      <a class="omcp-button omcp-button--brand" href="/skillforge/quickstart.html">Open Quickstart</a>
+      <a class="omcp-button" href="/skillforge/one-paste-installs.html">See one-paste installs</a>
+      <a class="omcp-button" href="/skillforge/marketplace.html">Browse the marketplace</a>
     </div>
   </section>
 </div>

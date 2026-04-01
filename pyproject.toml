@@ -9,7 +9,7 @@ description = "A local-first multi-LLM orchestration MCP server with routing, sa
 readme = "README.md"
 requires-python = ">=3.11"
 license = { file = "LICENSE" }
-authors = [{ name = "orchestrator-mcp contributors" }]
+authors = [{ name = "SkillForge contributors" }]
 keywords = [
   "mcp",
   "model-context-protocol",
@@ -50,10 +50,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jamiojala/orchestrator-mcp"
-Repository = "https://github.com/jamiojala/orchestrator-mcp"
-Issues = "https://github.com/jamiojala/orchestrator-mcp/issues"
-Documentation = "https://github.com/jamiojala/orchestrator-mcp"
+Homepage = "https://github.com/jamiojala/skillforge"
+Repository = "https://github.com/jamiojala/skillforge"
+Issues = "https://github.com/jamiojala/skillforge/issues"
+Documentation = "https://jamiojala.github.io/skillforge/"
 
 [project.scripts]
 orchestrator-mcp = "orchestrator_mcp.cli:main"

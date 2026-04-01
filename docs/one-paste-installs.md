@@ -1,9 +1,10 @@
 # One-Paste Installs
 
 <p class="omcp-lead">
-  These are the cleanest client wiring patterns for <code>orchestrator-mcp</code>. Use the same Python
-  executable that installed the package. If your machine exposes <code>python3</code> instead of <code>python</code>,
-  swap that value in every snippet below.
+  These are the cleanest client wiring patterns for SkillForge. The public repo is now
+  <code>skillforge</code>, while the installable runtime package remains <code>orchestrator-mcp</code>.
+  Use the same Python executable that installed the package. If your machine exposes <code>python3</code>
+  instead of <code>python</code>, swap that value in every snippet below.
 </p>
 
 ## Codex

@@ -1,8 +1,9 @@
 # About
 
 <p class="omcp-lead">
-  <code>orchestrator-mcp</code> exists because serious coding workflows are already multi-model, multi-client,
-  and operationally messy by default. The project is an attempt to give that mess a clean local control surface.
+  SkillForge exists because serious coding workflows are already multi-model, multi-client, and
+  operationally messy by default. The project gives that mess a cleaner public product surface while
+  the runtime package stays truthfully named <code>orchestrator-mcp</code>.
 </p>
 
 ## Why this repo exists

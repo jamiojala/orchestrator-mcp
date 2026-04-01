@@ -5,7 +5,7 @@ from orchestrator_mcp.marketplace import export_skill_pack, get_marketplace_skil
 
 def test_marketplace_contains_expected_skill_count() -> None:
     skills = list_marketplace_skills()
-    assert len(skills) == 100
+    assert len(skills) == 110
 
 
 def test_marketplace_lookup_returns_featured_skill() -> None:

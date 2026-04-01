@@ -1,8 +1,9 @@
 # Quickstart
 
 <p class="omcp-lead">
-  This is the fastest path to a working local runtime. Install the package, copy the config,
-  validate the setup, and then wire the server into whichever MCP-capable client you already use.
+  This is the fastest path to a working SkillForge runtime. Install the current
+  <code>orchestrator-mcp</code> package, copy the config, validate the setup, and then wire the server
+  into whichever MCP-capable client you already use.
 </p>
 
 ## 1. Install the package

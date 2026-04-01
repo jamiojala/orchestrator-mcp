@@ -1,20 +1,20 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'orchestrator-mcp',
-  titleTemplate: ':title | orchestrator-mcp',
+  title: 'SkillForge',
+  titleTemplate: ':title | SkillForge',
   description:
     'Local-first MCP server and portable skill marketplace for Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA-backed models.',
   lang: 'en-US',
-  base: '/orchestrator-mcp/',
+  base: '/skillforge/',
   lastUpdated: true,
   cleanUrls: false,
   appearance: false,
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/skillforge/favicon.svg' }],
     ['meta', { name: 'theme-color', content: '#0d1015' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'orchestrator-mcp' }],
+    ['meta', { property: 'og:title', content: 'SkillForge' }],
     [
       'meta',
       {
@@ -27,7 +27,7 @@ export default defineConfig({
   themeConfig: {
     logo: {
       src: '/logo-mark.svg',
-      alt: 'orchestrator-mcp'
+      alt: 'SkillForge'
     },
     nav: [
       { text: 'Home', link: '/' },
@@ -54,6 +54,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Overview', link: '/skills' },
+          { text: 'Persona Architecture', link: '/persona-architecture' },
           { text: 'Advanced Packs', link: '/skills-categories/advanced-packs' },
           { text: 'Architecture & System Design', link: '/skills-categories/architecture' },
           { text: 'Frontend Engineering', link: '/skills-categories/frontend' },
@@ -64,7 +65,8 @@ export default defineConfig({
           { text: 'Data & Analytics', link: '/skills-categories/data' },
           { text: 'Product & UX', link: '/skills-categories/product' },
           { text: 'Content & Communication', link: '/skills-categories/content' },
-          { text: 'Business & Operations', link: '/skills-categories/business' }
+          { text: 'Business & Operations', link: '/skills-categories/business' },
+          { text: 'AI/ML Engineering', link: '/skills-categories/ai-ml' }
         ]
       },
       {
@@ -81,14 +83,14 @@ export default defineConfig({
         ]
       }
     ],
-    socialLinks: [{ icon: 'github', link: 'https://github.com/jamiojala/orchestrator-mcp' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/jamiojala/skillforge' }],
     search: {
       provider: 'local'
     },
     outline: [2, 3],
     outlineTitle: 'On this page',
     editLink: {
-      pattern: 'https://github.com/jamiojala/orchestrator-mcp/edit/main/docs/:path',
+      pattern: 'https://github.com/jamiojala/skillforge/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
     docFooter: {
@@ -97,7 +99,7 @@ export default defineConfig({
     },
     footer: {
       message: 'Apache-2.0 licensed. Built for serious multi-model workflows.',
-      copyright: 'Copyright © 2026 orchestrator-mcp contributors'
+      copyright: 'Copyright © 2026 SkillForge contributors'
     }
   }
 })

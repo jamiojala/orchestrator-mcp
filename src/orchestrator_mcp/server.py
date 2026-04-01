@@ -99,7 +99,7 @@ def build_server(config_path: Path | None = None) -> FastMCP:
         "llm://registry/marketplace-skills",
         name="skill_marketplace",
         title="Skill Marketplace",
-        description="Summary of the built-in 100-skill marketplace catalog.",
+        description="Summary of the built-in 110-skill marketplace catalog.",
         mime_type="application/json",
     )
     def skill_marketplace_resource() -> str:
