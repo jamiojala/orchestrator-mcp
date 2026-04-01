@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "skills": [
+    {"slug": "cinematic-upgrade", "category": "design", "portable": false},
+    {"slug": "public-repo-sanitizer", "category": "release", "portable": true},
+    {"slug": "mcp-server-hardening", "category": "security", "portable": true},
+    {"slug": "multi-agent-prd-breakdown", "category": "orchestration", "portable": true},
+    {"slug": "failure-replay-lab", "category": "debugging", "portable": true},
+    {"slug": "cost-router-tuner", "category": "routing", "portable": true},
+    {"slug": "design-system-drift-audit", "category": "design", "portable": true},
+    {"slug": "api-contract-diff", "category": "api", "portable": true},
+    {"slug": "docs-sync-guardian", "category": "docs", "portable": true},
+    {"slug": "test-matrix-generator", "category": "testing", "portable": true},
+    {"slug": "threat-model-synthesizer", "category": "security", "portable": true}
+  ]
+}

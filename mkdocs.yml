@@ -1,0 +1,26 @@
+site_name: orchestrator-mcp
+site_description: Local-first MCP server for multi-LLM orchestration across Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA-backed models.
+site_url: https://github.com/jamiojala/orchestrator-mcp
+repo_url: https://github.com/jamiojala/orchestrator-mcp
+repo_name: jamiojala/orchestrator-mcp
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.instant
+    - content.code.copy
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - One-Paste Installs: one-paste-installs.md
+  - Providers: providers.md
+  - Cost Routing: cost-routing.md
+  - Dashboard: dashboard.md
+  - Skills: skills.md
+  - Safety: safety.md
+  - Benchmarks: benchmarks.md
+  - Cinematic Upgrade: cinematic-upgrade.md

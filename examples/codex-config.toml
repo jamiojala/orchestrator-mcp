@@ -1,0 +1,3 @@
+[mcp_servers.orchestrator]
+command = "python"
+args = ["-m", "orchestrator_mcp.cli", "serve"]

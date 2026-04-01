@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Local state
+.env
+.DS_Store
+orchestrator-mcp.yaml
+.streamlit/
+state/
+tmp/
+
+# Dashboard and logs
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+logs/
+
+# IDEs
+.vscode/
+.idea/
+
