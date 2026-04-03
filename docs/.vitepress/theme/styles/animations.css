@@ -1,21 +1,61 @@
+/* ── Reveal system ── */
+.sf-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sf-reveal.sf-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sf-reveal-delay-1 { transition-delay: 80ms; }
+.sf-reveal-delay-2 { transition-delay: 160ms; }
+.sf-reveal-delay-3 { transition-delay: 240ms; }
+.sf-reveal-delay-4 { transition-delay: 320ms; }
+.sf-reveal-delay-5 { transition-delay: 400ms; }
+
+/* ── Keyframes ── */
 @keyframes sf-fade-in {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes sf-float {
-  0%,
-  100% {
+@keyframes sf-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
 
+@keyframes sf-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sf-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
   50% {
     transform: translate3d(0, -10px, 0);
   }
@@ -25,20 +65,26 @@
   from {
     transform: translate3d(0, 0, 0);
   }
-
   to {
     transform: translate3d(22px, 16px, 0);
   }
 }
 
 @keyframes sf-pulse {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 1;
   }
-
   50% {
-    opacity: 0.6;
+    opacity: 0.5;
+  }
+}
+
+@keyframes sf-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px 4px rgba(249, 115, 22, 0.15);
   }
 }
 
@@ -46,12 +92,43 @@
   from {
     transform: translateX(-100%);
   }
-
   to {
     transform: translateX(100%);
   }
 }
 
+@keyframes sf-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sf-spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sf-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes sf-typing-cursor {
+  0%, 100% { border-color: var(--sf-c-primary); }
+  50% { border-color: transparent; }
+}
+
+/* ── Reduced motion ── */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -60,5 +137,11 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .sf-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

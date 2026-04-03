@@ -50,8 +50,8 @@
   --sf-shadow-glow: 0 0 0 1px rgba(249, 115, 22, 0.1), 0 18px 44px rgba(249, 115, 22, 0.18);
 
   --sf-transition-fast: 150ms ease;
-  --sf-transition-base: 250ms ease;
-  --sf-transition-slow: 350ms ease;
+  --sf-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --sf-transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
 
   --sf-max-width: 1280px;
   --sf-max-width-wide: 1400px;
@@ -60,6 +60,10 @@
   --sf-c-primary-light: #fb923c;
   --sf-c-primary-dark: #ea580c;
   --sf-c-primary-subtle: rgba(249, 115, 22, 0.12);
+
+  --sf-c-accent: #6366f1;
+  --sf-c-accent-light: #818cf8;
+  --sf-c-accent-subtle: rgba(99, 102, 241, 0.12);
 
   --sf-c-bg: #fcfbf7;
   --sf-c-bg-soft: #f4f1eb;
@@ -92,6 +96,14 @@
   --sf-c-ai-ml: #6366f1;
   --sf-c-blockchain: #ec4899;
   --sf-c-iot: #84cc16;
+
+  /* Gradient text */
+  --sf-gradient-primary: linear-gradient(135deg, #f97316 0%, #fb923c 40%, #fbbf24 100%);
+  --sf-gradient-hero: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #6366f1 100%);
+  --sf-gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  --sf-gradient-mesh: radial-gradient(ellipse at 20% 0%, rgba(249, 115, 22, 0.15), transparent 50%),
+    radial-gradient(ellipse at 80% 0%, rgba(99, 102, 241, 0.12), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.08), transparent 50%);
 
   --vp-font-family-base: var(--sf-font-sans);
   --vp-font-family-mono: var(--sf-font-mono);
@@ -126,18 +138,26 @@ html {
 
 html.dark {
   color-scheme: dark;
-  --sf-c-bg: #09090b;
-  --sf-c-bg-soft: #111116;
-  --sf-c-bg-alt: #16161c;
-  --sf-c-bg-elevated: rgba(18, 18, 25, 0.84);
-  --sf-c-bg-strong: rgba(20, 20, 29, 0.94);
-  --sf-c-text-1: #f6f4ef;
-  --sf-c-text-2: #cbc4b7;
-  --sf-c-text-3: #8f8b84;
-  --sf-c-border: rgba(255, 255, 255, 0.12);
-  --sf-c-border-subtle: rgba(255, 255, 255, 0.06);
-  --sf-shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.28);
-  --sf-shadow-md: 0 18px 44px rgba(0, 0, 0, 0.38);
-  --sf-shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.48);
-  --sf-shadow-glow: 0 0 0 1px rgba(249, 115, 22, 0.18), 0 22px 60px rgba(249, 115, 22, 0.22);
+
+  --sf-c-bg: #050507;
+  --sf-c-bg-soft: #0c0c10;
+  --sf-c-bg-alt: #111116;
+  --sf-c-bg-elevated: rgba(14, 14, 20, 0.88);
+  --sf-c-bg-strong: rgba(16, 16, 24, 0.95);
+
+  --sf-c-text-1: #f0ece4;
+  --sf-c-text-2: #a8a29e;
+  --sf-c-text-3: #6b6560;
+
+  --sf-c-border: rgba(255, 255, 255, 0.08);
+  --sf-c-border-subtle: rgba(255, 255, 255, 0.04);
+
+  --sf-shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.4);
+  --sf-shadow-md: 0 18px 44px rgba(0, 0, 0, 0.5);
+  --sf-shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.6);
+  --sf-shadow-glow: 0 0 0 1px rgba(249, 115, 22, 0.2), 0 0 40px rgba(249, 115, 22, 0.12), 0 22px 60px rgba(249, 115, 22, 0.15);
+
+  --sf-gradient-mesh: radial-gradient(ellipse at 20% 0%, rgba(249, 115, 22, 0.08), transparent 50%),
+    radial-gradient(ellipse at 80% 0%, rgba(99, 102, 241, 0.06), transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.04), transparent 50%);
 }

@@ -7,16 +7,12 @@ body,
 body {
   font-family: var(--sf-font-sans);
   color: var(--sf-c-text-1);
-  background:
-    radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 24%),
-    radial-gradient(circle at top left, rgba(99, 102, 241, 0.08), transparent 20%),
-    linear-gradient(180deg, var(--sf-c-bg) 0%, var(--sf-c-bg-soft) 100%);
+  background: var(--sf-c-bg);
 }
 
 .Layout {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
-    radial-gradient(circle at top right, rgba(249, 115, 22, 0.05), transparent 28%);
+  background: var(--sf-gradient-mesh);
+  background-attachment: fixed;
 }
 
 .vp-doc,
@@ -74,24 +70,52 @@ pre,
   font-family: var(--sf-font-mono);
 }
 
+/* ── Gradient text ── */
+.sf-gradient-text {
+  background: var(--sf-gradient-hero);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sf-gradient-shift 8s ease infinite;
+}
+
+.sf-gradient-text--primary {
+  background: var(--sf-gradient-primary);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: sf-gradient-shift 6s ease infinite;
+}
+
+.sf-gradient-text--accent {
+  background: var(--sf-gradient-accent);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Kicker / label ── */
 .sf-kicker {
   display: inline-flex;
   align-items: center;
-  gap: var(--sf-space-2);
+  gap: var(--sf-space-3);
   margin: 0;
   color: var(--sf-c-primary);
   font-size: var(--sf-text-xs);
   font-weight: var(--sf-font-bold);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .sf-kicker::before {
   content: '';
-  width: 1.25rem;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.56;
+  width: 1.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sf-c-primary), var(--sf-c-primary-light));
+  border-radius: 1px;
 }
 
 .sf-muted {
