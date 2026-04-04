@@ -90,7 +90,7 @@ const terminalSkills = [
         <!-- Status line -->
         <div class="sf-hero__terminal-status">
           <span class="sf-hero__terminal-status-dot" aria-hidden="true"></span>
-          302 skills loaded &nbsp;·&nbsp; 14 domains &nbsp;·&nbsp; v2.0.0 &nbsp;·&nbsp; MIT
+          302 skills loaded &nbsp;·&nbsp; 14 domains &nbsp;·&nbsp; v2.0.0 &nbsp;·&nbsp; Apache-2.0
         </div>
       </div>
     </div>

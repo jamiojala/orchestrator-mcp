@@ -5,7 +5,7 @@ import { getPageUrl } from '../lib/catalog'
 <template>
   <div class="sf-open-source-badges">
     <a :href="getPageUrl('/license')">
-      <strong>MIT licensed</strong>
+      <strong>Apache-2.0 licensed</strong>
       <span>Portable by default, permissive by design.</span>
     </a>
     <a :href="getPageUrl('/safety')">

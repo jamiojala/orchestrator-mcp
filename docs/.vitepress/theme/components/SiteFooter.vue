@@ -47,10 +47,10 @@ const columns = [
     <div class="sf-site-footer__top">
       <div class="sf-site-footer__brand">
         <p class="sf-kicker">SkillForge</p>
-        <h2>The operating system for AI capabilities.</h2>
+        <h2>One skill library for every coding agent.</h2>
         <p>
-          Built by people who ship. Maintained in public. Designed to keep portable skill packs
-          readable, reusable, and GitHub-native.
+          302 portable skill packs, maintained in public, designed to work across Codex,
+          Claude Code, Kimi Code, and any MCP-capable client.
         </p>
         <NewsletterSignup />
       </div>

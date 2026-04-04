@@ -20,39 +20,39 @@ const topCollections = [...siteCatalog.collections].sort((left, right) => right.
 
 const processSteps = [
   {
-    title: 'Discover',
-    body: 'Browse a catalog of public domains, advanced first-party packs, and portable manifests that can be inspected before adoption.'
+    title: 'Browse',
+    body: 'Pick from 302 skill packs across 14 domains. Every pack has a readable manifest — no hidden prompt blobs.'
   },
   {
-    title: 'Install',
-    body: 'Use the local orchestration runtime or export a pack directly into another markdown-first or MCP-capable workflow.'
+    title: 'Install or export',
+    body: 'Run the MCP runtime for full orchestration, or export individual packs into any markdown-first workflow.'
   },
   {
-    title: 'Deploy',
-    body: 'Compose packs deliberately with explicit triggers, model preferences, validation hooks, and public GitHub-native version history.'
+    title: 'Ship',
+    body: 'Compose packs with explicit triggers, model preferences, and validation hooks. Version everything on GitHub.'
   }
 ]
 
 const comparisonRows = [
   {
-    label: 'Vendor lock-in',
-    other: 'Skills tied to one client, one prompt box, or one proprietary surface.',
-    skillforge: 'Portable SKILL.md plus YAML packs designed to move between ecosystems.'
+    label: 'Portability',
+    other: 'Skills locked to one client or proprietary marketplace.',
+    skillforge: 'SKILL.md + YAML packs that move freely between Codex, Claude Code, Kimi Code, and more.'
   },
   {
-    label: 'Operational clarity',
-    other: 'Opaque prompt blobs with weak provenance and hidden expectations.',
-    skillforge: 'Structured manifests, validation hooks, file targets, and model intent you can inspect.'
+    label: 'Transparency',
+    other: 'Opaque prompt blobs you cannot inspect or audit.',
+    skillforge: 'Every pack has a readable manifest with role, voice, reasoning steps, and validation hooks.'
   },
   {
-    label: 'Contribution path',
-    other: 'Closed catalogs or complicated pipelines that do not fit solo maintenance.',
-    skillforge: 'Fork, add a pack, open a PR, and let GitHub stay the primary workflow.'
+    label: 'Contributing',
+    other: 'Closed catalogs or complex submission pipelines.',
+    skillforge: 'Fork, add a pack, open a PR. GitHub is the entire workflow.'
   },
   {
-    label: 'Cost and access',
-    other: 'Paywalls, proprietary marketplaces, or client-specific duplication.',
-    skillforge: 'Open-source catalog, public docs, and portable exports without gatekeeping.'
+    label: 'Cost',
+    other: 'Paywalls, subscription tiers, or duplicated per-client setups.',
+    skillforge: 'Free, open-source, MIT licensed. No gatekeeping.'
   }
 ]
 </script>
@@ -60,16 +60,17 @@ const comparisonRows = [
 <template>
   <div class="sf-page">
     <HeroSection
-      eyebrow="Open-source AI infrastructure"
-      title="The operating system for AI capabilities."
-      lead="Portable skill packs that work with Codex, Claude Code, Kimi Code, and any agent that follows the standard. Open source. Community-readable. Ready to use."
+      eyebrow="Open-source · 302 skills · MIT licensed"
+      title="One skill library for every coding agent."
+      lead="Portable skill packs for Codex, Claude Code, Kimi Code, and any MCP-capable client. Browse, install, export. No vendor lock-in."
     >
       <template #title>
-        The <span class="sf-gradient-text--primary">operating system</span><br>for AI capabilities.
+        One skill library for<br><span class="sf-gradient-text--primary">every coding agent.</span>
       </template>
       <template #actions>
-        <a class="sf-btn sf-btn--primary" :href="getPageUrl('/skills/')">Browse Skills</a>
-        <a class="sf-btn sf-btn--secondary" href="https://github.com/jamiojala/skillforge">View on GitHub</a>
+        <a class="sf-btn sf-btn--primary" :href="getPageUrl('/skills/')">Browse 302 Skills</a>
+        <a class="sf-btn sf-btn--secondary" href="https://github.com/jamiojala/skillforge">GitHub</a>
+        <a class="sf-btn sf-btn--ghost" :href="getPageUrl('/support')">Support this project</a>
       </template>
     </HeroSection>
 
@@ -77,11 +78,11 @@ const comparisonRows = [
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Skills that ship</p>
-        <h2 class="sf-section-heading__title">Production-ready capabilities, visible enough to trust.</h2>
+        <p class="sf-kicker">Featured packs</p>
+        <h2 class="sf-section-heading__title">Real skills you can inspect before you install.</h2>
         <p class="sf-section-heading__lead">
-          SkillForge is strongest when the packs feel inspectable, portable, and specific. These
-          are representative slices of the catalog.
+          Every pack ships with a readable manifest — role, voice, reasoning steps, validation hooks.
+          No prompt blobs.
         </p>
       </div>
 
@@ -92,11 +93,10 @@ const comparisonRows = [
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Browse by lane</p>
-        <h2 class="sf-section-heading__title">A marketplace shape, not a documentation maze.</h2>
+        <p class="sf-kicker">14 domains</p>
+        <h2 class="sf-section-heading__title">Organized by what you actually build.</h2>
         <p class="sf-section-heading__lead">
-          Clear domain lanes make the catalog scan like a product surface and keep advanced packs
-          visible instead of buried.
+          Not a flat list. Clear lanes from frontend to security to AI/ML so you find what you need fast.
         </p>
       </div>
 
@@ -115,10 +115,43 @@ const comparisonRows = [
       </div>
     </section>
 
+    <!-- Mid-page support nudge -->
+    <section class="sf-shell sf-section">
+      <aside class="sf-support-nudge">
+        <div class="sf-support-nudge__content">
+          <p class="sf-support-nudge__eyebrow">Built by one maintainer, used by many</p>
+          <h2 class="sf-support-nudge__title">This project runs on sponsorship, not VC money.</h2>
+          <p class="sf-support-nudge__body">
+            SkillForge is maintained in the open by a solo developer. Every skill pack, every docs page,
+            every safety check — built and shipped without corporate backing. If this saves your team time,
+            a sponsorship keeps it alive.
+          </p>
+          <div class="sf-inline-actions">
+            <a class="sf-btn sf-btn--primary" href="https://github.com/sponsors/jamiojala">Sponsor on GitHub</a>
+            <a class="sf-btn sf-btn--secondary" :href="getPageUrl('/support')">See what your money funds</a>
+          </div>
+        </div>
+        <div class="sf-support-nudge__stats">
+          <div class="sf-support-nudge__stat">
+            <strong>302</strong>
+            <span>skill packs maintained</span>
+          </div>
+          <div class="sf-support-nudge__stat">
+            <strong>14</strong>
+            <span>domain categories</span>
+          </div>
+          <div class="sf-support-nudge__stat">
+            <strong>1</strong>
+            <span>maintainer</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">From install to execution</p>
-        <h2 class="sf-section-heading__title">One adoption path for the runtime, another for portable packs.</h2>
+        <p class="sf-kicker">Get started</p>
+        <h2 class="sf-section-heading__title">Two ways in: run the runtime, or just grab the packs.</h2>
       </div>
 
       <ProcessSteps
@@ -131,8 +164,8 @@ orchestrator-mcp skills export liquid-glass-enforcer --to ./skillforge-packs"
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Built different</p>
-        <h2 class="sf-section-heading__title">Skill packs should behave like infrastructure, not like prompt scraps.</h2>
+        <p class="sf-kicker">Why SkillForge</p>
+        <h2 class="sf-section-heading__title">Skills should be infrastructure, not disposable prompt scraps.</h2>
       </div>
 
       <ComparisonTable :rows="comparisonRows" />
@@ -140,19 +173,19 @@ orchestrator-mcp skills export liquid-glass-enforcer --to ./skillforge-packs"
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Trust signals</p>
-        <h2 class="sf-section-heading__title">Open source by default, honest about what is real today.</h2>
+        <p class="sf-kicker">Open by default</p>
+        <h2 class="sf-section-heading__title">MIT licensed, GitHub native, no hidden backend.</h2>
       </div>
       <OpenSourceBadges />
     </section>
 
     <section class="sf-shell sf-section">
       <SupportCTA
-        title="Ready to build with portable AI skills?"
-        body="Start with the catalog, install the runtime if you need orchestration, and support the project if you want the next wave of packs to land faster."
-        primary-label="Get Started — It’s Free"
+        title="Use it free. Fund it if it matters to you."
+        body="The catalog is free forever. Sponsorship funds new packs, better docs, and the maintenance that keeps 302 skills from rotting."
+        primary-label="Get Started Free"
         :primary-href="getPageUrl('/quickstart')"
-        secondary-label="Support SkillForge"
+        secondary-label="Become a Sponsor"
         :secondary-href="getPageUrl('/support')"
       />
     </section>

@@ -16,10 +16,4 @@ defineProps<{
       <p>{{ sponsor.description }}</p>
     </a>
   </div>
-
-  <div v-else class="sf-empty-state">
-    <p class="sf-kicker">Sponsor wall</p>
-    <h2 class="sf-section-heading__title">No public sponsors listed yet.</h2>
-    <p>That is fixable. If SkillForge saves your team time, you can be the first visible supporter.</p>
-  </div>
 </template>
