@@ -1,5 +1,0 @@
-{
-  "transport": "stdio",
-  "command": "python",
-  "args": ["-m", "orchestrator_mcp.cli", "serve"]
-}
